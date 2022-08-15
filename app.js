@@ -316,15 +316,129 @@
 // х-х-х-х-х-х...
 // hsChOoL -> h-s-c-h-o-o-l
 
-let a = prompt("введите текст");
+// let a = prompt("введите текст");
 
-if (isNaN(a)) {
-    a.toLowerCase();
-    a.trim();
-    a.split("");
-    // a.split("").join(" ");
-    // Array.from(a).join(" ");
-    console.log(a.replaceAll(" ", "-"));
-} else {
-    console.log("некорректный ввод");
-}
+// if (isNaN(a)) {
+//         console.log(a.toLowerCase().trim().split("").join("-"));
+// } else {
+//     console.log("некорректный ввод");
+// }
+
+
+//14.08.2022
+
+// 1. Ввести строку. Если эта равна “hschool”, вывести true. В противном случае false.
+// Добавить проверки для строк. Удалить лишние пробелы
+
+// let a = prompt("введите текст").trim();
+// console.log(isNaN(a) && a.toLowerCase() === "hschool" ? true : false);
+
+
+// 2. Ввести строку.Проверить является ли это число или строка.Если число, то
+// выяснить, четное или нет.Если это строка то преобразовать строку в массив, где
+// каждый символ – один элемент массива
+// ‘hschool’ => [‘h’, ‘s’, ‘c’, ‘h’, ‘o’, ‘o’, ‘l’]
+
+// const a = prompt("").trim();
+
+// if (isNaN(a)) {
+//     console.log(a.split(''));
+// } else {
+//     console.log(a % 2 === 0 ? "четное" : "нечетное");
+// }
+
+// 3. Преобразовать строку ‘сStaCK DevELoper’ в массив вида [‘full, ‘stack’, ‘developer’]
+
+// const a = prompt("").trim().toLowerCase();
+// console.log(a.split(" "));
+
+// 4. Ввести строку. Проверить на isNaN. Если число, то ошибка ввода. Если это строка
+// то узнать какая у нее длина. Привести к одному регистру, убрать лишние пробелы
+
+// const a = prompt("").trim().toLowerCase();
+
+// console.log(isNaN(a) ? a.length : "ошибка ввода");
+
+// 5. ‘HTML JavaScript PHP’ преобразовать в "HTML-JAVASCRIPT-PHP"
+
+// console.log(prompt("").toUpperCase().replaceAll(" ", "-"));
+
+// 6. Ввести строку. Проверить является ли это число или строка. Если число, то
+// ошибка ввода. Если это строка то первый символ поставить в верхний регистр.
+// Убрать лишние пробелы
+
+// const a = prompt("").trim().toLowerCase();
+// if (!isNaN(a)) {
+// console.log("ошибка ввода");
+// } else {
+//     console.log(a[0].toUpperCase() + a.slice(1));
+// }
+
+// 7. На вход программе подаётся строка. Замените все @ на '!' с помощью
+// глобального поиска и замены (2 способа)
+
+// const a = prompt("").replaceAll("@", "!");
+// console.log(a);
+
+// console.log(a.split("@").join("!")); // 2 способ
+
+// 8. Дана строка 'aaa bbb ccc'. Вырежите из нее слово 'bbb' тремя разными способами
+
+// let a = 'aaa bbbbb ccc';
+// console.log(a.slice(a.indexOf("b"), a.lastIndexOf("b")) + "b");
+
+// 9. На вход программе подается переменная date, в котрой лежит дата в формате
+// 'xxxx-xx-xx'. Преобразуйте эту дату в формат 'xx/xx/xxxx’. (reverse)
+
+// const a = prompt("введите дату");
+// console.log(a.split("-").reverse().join("/"))
+
+// 10. Дана строка из 3 слов разделенных пробелом:
+// • Найдите количество символов в этой строке.
+// • Вырежите из нее 2 и 3 слова.
+// • Найдите индекс 2 подстроки
+
+// const a = prompt("");
+// let n = a.indexOf(" ");
+// console.log(`количество символов - ${a.length}\n${a.slice(n + 1)}\nиндекс 2ой подстроки ${n + 1}`);
+
+// 11. Пользователь вводит дату в формате ‘х-х-х'. Замените все дефисы на '!'
+
+// console.log(prompt("").replaceAll("-", "!"));
+
+// 12. Пользователь вводит дату в формате 'xxxx-xx-xx'. Преобразуйте эту дату в формат
+// 'xx.xx.xxxx'.
+
+// console.log(prompt("").split("-").reverse().join("."));
+
+// 13. Дан массив ['я', 'учу', 'javascript', '!']. С помощью метода join преобразуйте массив в
+// строку 'я+учу+javascript+!'.
+
+// let arr = ['я', 'учу', 'javascript', '!'];
+// console.log(arr.join("+"));
+
+// 14. Дан массив. Вывести каждый одельный элемент в консоль (for)
+
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+// for (let i = 0; i < arr.length; i++){
+//     console.log(arr[i]);
+// }
+
+// 15. На вход программе подается строка текста, состоящая из слов, разделенных
+// ровно одним пробелом. Напишите программу, которая подсчитывает количество
+// слов в ней
+
+// const str = prompt("").split(" ");
+// console.log(str.length);
+
+// 16. Пользователь вводит строку. Необходимо посчитать количество гласных (for)
+
+// const str = prompt("");
+// let count = 0;
+// for (let i = 0; i < str.length; i++) {
+//     if (str[i] === "а" || str[i] === "и" || str[i] === "е" || str[i] === "у" || str[i] === "о" || str[i] === "я") {
+//         count += 1;
+//     }
+// }
+// console.log(count); //гласные
+// console.log(str.length - count); //согласные
