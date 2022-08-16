@@ -442,3 +442,204 @@
 // }
 // console.log(count); //гласные
 // console.log(str.length - count); //согласные
+
+
+
+
+
+
+
+// 17. Пользователь вводит строку. Необходимо посчитать количество согласных (for)
+
+// let a = prompt("");
+// let count = 0;
+// for (let i = 0; i < a.length; i++) {
+//     if (a[i] === "s" || a[i] === "v" || a[i] === "n") {
+//         count += 1;
+//     }
+// }
+// console.log(count);
+
+// 18. Пользователь вводит строку. Необходимо вывести все гласные отдельной
+// строкой (for)
+// fullstack => ua
+
+// let a = prompt("");
+// let count;
+// for (let i = 0; i < a.length; i++) {
+//     if (a[i] === "s" || a[i] === "v" || a[i] === "n") {
+//         count += a[i];
+//     }
+// }
+// console.log(count);
+
+// 19. На вход программе подается строка. Преобразуйте первую букву каждого слова
+// строки в верхний регистр (for)
+
+//????????????????????????
+
+// const str = "avc sdf rsc".trim();
+// let result = "";
+// for (let i = 0; i < str.length; i++) {
+//     if (i === 0) {
+//         result += str[i].toUpperCase();
+//     }
+
+//     if (str[i - 1] === " ") {
+//         result += str[i].toUpperCase();
+//     } else if (str[i - 1] !== " " && i !== 0) {
+//         result += str[i];
+//     }
+// }
+// console.log(result);
+
+// 20.На вход программе подается строка, где каждое слово заканчивается “_”.
+// Программа должна убрать “_” и первую букву каждого слова (помимо первого),
+// преобразовать в верхний регистр (for)
+
+// const str = "one_ two_ three_   ".trim().replaceAll("_", "");
+// let result = "";
+// for (let i =0; i < str.length; i++){
+//     if (str[i-1] === " ") {
+//         result+= str[i].toUpperCase();
+//     } else {
+//         result +=str[i];
+//     }
+// }
+// console.log(result);
+
+// 21. На вход программе подается строка, состоящая из имени и фамилии человека,
+// разделенных одним пробелом. Напишите программу, которая проверяет, что имя
+// и фамилия начинаются с заглавной буквы.
+// Chris Alan => true
+// chris alan => false
+
+// const str = "Chris alan".trim();
+// let n = str.indexOf(" ");
+//     if (str[0] === str[0].toUpperCase() && str[n+1] === str[n+1].toUpperCase()){
+//         console.log(true);
+//     } else {
+//         console.log(false);
+//     }
+
+// 22. На вход программе подается строка. Напишите программу, которая меняет
+// регистр символов, другими словами замените все строчные символы заглавными
+// и наоборот.
+// Swap Case => sWAP cASE
+
+// const str = "SwAp CaSe";
+// result = "";
+// for (let i = 0; i<str.length; i++){
+//     if(str[i] === str[i].toLowerCase()) {
+//         result += str[i].toUpperCase();
+//     } else {
+//         result += str[i].toLowerCase();
+//     }
+// }
+// console.log(result);
+
+// 23. На вход программе подается строка текста. Напишите программу, которая
+// определяет является ли строка хорошей. Текст хороший, если содержит
+// подстроку «хорош» во всевозможных регистрах.
+// я очень хороший текст => true
+
+// const str = "я очень ХорОший текст".toLowerCase();
+// console.log(str.includes("хорош"));
+
+// 24.На вход программе подается строка. Напишите программу, которая подсчитывает
+// количество буквенных символов в нижнем регистре.
+// abcABCD12345 => 3
+
+//?????????????
+//можно ли как-то сокращенно все цифры написать
+
+// const str = "abcABCD12345";
+// let count = 0;
+// for (let i = 0; i < str.length; i++) {
+//     if (str[i] === str[i].toLowerCase() && str[i] !== '1' && str[i] !== '2' && str[i] !== '3' && str[i] !== '4' && str[i] !== '5' && str[i] !== '6' && str[i] !== '7') {
+//         count++;
+//     }
+// }
+// console.log(count);
+
+// 25. На вход программе подается строка из букв А, Г, Ц, Т. Напишите программу,
+// которая подсчитывает сколько букв
+// АааГГЦЦцТТтттА => А – 4 Г – 2 Ц – 3 Т – 5
+
+// const str = "АааГГЦЦцТТтттА".toUpperCase();
+// let countA = 0;
+// let countG = 0;
+// let countC = 0;
+// let countT = 0;
+// for (let i = 0; i < str.length; i++) {
+//     if (str[i] === 'А') {
+//         countA++;
+//     } else if (str[i] === 'Г') {
+//         countG++;
+//     } else if (str[i] === 'Ц') {
+//         countC++;
+//     } else if (str[i] === 'Т') {
+//         countT++
+//     }
+// }
+// console.log(`А - ${countA} Г - ${countG} Ц - ${countC} Т - ${countT}`);
+
+//2способ
+
+//???нужен ли???
+
+// const str = "АааГГЦЦцТТтттА".toUpperCase();
+// let countA = 0;
+// let countG = 0;
+// let countC = 0;
+// let countT = 0;
+// for (let i = 0; i < str.length; i++) {
+//     switch (str[i]) {
+//         case 'А':
+//             countA++;
+//             break;
+//         case 'Г':
+//             countG++;
+//             break;
+//         case 'Ц':
+//             countC++;
+//             break;
+//         case 'Т':
+//             countT++;
+//             break;
+//     }
+// }
+// console.log(`А - ${countA} Г - ${countG} Ц - ${countC} Т - ${countT}`);
+
+// 26. На вход программе подается строка текста. Напишите программу, которая
+// проверяет, что строка заканчивается подстрокой .com или .ru. Если
+// заканчивается, то вывести true, в противном случае false
+
+//перерешать 
+
+// const str = "hschool.com".split(".");
+// if (str[str.length - 1] === 'com' || str[str.length - 1] === "ru") {
+//     console.log(true);
+// } else {
+//     console.log(false);
+// }
+
+
+// const str = "hschool.com";
+// if (str.endsWith(".com") || str.endsWith(".ru")) {
+//     console.log(true);
+// } else {
+//     console.log(false);
+// }
+
+// 27. На вход подается url. Если он начинается с http, содержит хотя бы один “/” и
+// заканчивается подстрокой .com или .ru, то вывести true, в противном случае false
+
+// https://www.instagram.com/hschool.official/
+
+// const str = "https://www.instagram.com/hschool.official.com".trim();
+// if (str.startsWith("http") && str.includes("/") && (str.endsWith(".com") || str.endsWith(".ru"))) {
+//     console.log(true);
+// } else {
+//     console.log(false);
+// }
