@@ -489,9 +489,9 @@
 // const arr = [];
 
 // for (let i = 0; i < a; i++) {
-//     b = prompt("enter");
+//     let b = prompt("enter");
 //     if (isNaN(b)) {
-//         arr[i] = b;
+//         arr.push(b);
 //     }
 // }
 // console.log(arr);
