@@ -529,7 +529,6 @@
 // const res = [...arr, ...arr2]; //spread
 // console.log(res);
 
-// rest ?????????
 
 // 16. *На входе статичный массив [1, 2, 3, 4, 5, 6] и динамическое значение n.
 // Необходимо разбить данный одномерный массив на маленькие массивы в
@@ -542,6 +541,8 @@
 // 4 -> [[1, 2, 3, 4], [5, 6]
 // 5 -> [[1, 2, 3, 4, 5], [6]]
 // 6 -> [[1, 2, 3, 4, 5, 6]]
+
+
 
 
 
@@ -625,3 +626,248 @@
 //     }
 // })
 // console.log(res);
+
+// 1. Сумма элементов массива динамичного массива. reduce
+
+// let n = +prompt("")
+// const arr = [];
+
+// for (let i = 0; i < n; i++) {
+//     let input = prompt("");
+//     if (!isNaN(input)) {
+//         arr.push(+input)
+//     }
+// }
+
+// let res = arr.reduce((sum, elem) => {
+//     return sum + elem
+// }, 0)
+// console.log(res);
+
+// 2. Найти максимальное число динамичного массива. filter 
+
+// let n = +prompt("")
+// const arr = [];
+
+// for (let i = 0; i < n; i++) {
+//     arr.push(+prompt(""))
+// }
+
+// let a = arr[0]
+
+// let res = arr.filter(elem => {
+//     if (elem > a) {
+//         a = elem;
+//         return true
+//     }
+// })
+// console.log(res[res.length - 1]);
+
+
+// 3. Найти максимальное и минимальное число динамичного массива. forEach
+
+// let n = +prompt("")
+// const arr = [];
+
+// for (let i = 0; i < n; i++) {
+//     arr.push(+prompt(""))
+// }
+// let a = arr[0]
+// let b = arr[0]
+// arr.forEach(elem => {
+//     if (elem > a) {
+//         a = elem
+//     }
+//     if(elem < b) {
+//         b = elem
+//     }
+// })
+// console.log(a);
+// console.log(b);
+
+// 4. Палиндром. Сравнить с развернутой строкой не используя reverse. For
+
+// const str = "Milan".toLowerCase().trim().split("");
+// const str2 = "nalim".toLowerCase().trim().split("");
+
+// if (str.length === str2.length) {
+//     let s1 = [];
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         s1.push(str[i])
+//     }
+//     console.log(str2.join("") === s1.join("") ? true : false);
+// }
+
+// 5. Создать массив гласных из динамичного массива. Filter
+
+// let n = +prompt("")
+// const arr = [];
+
+// for (let i = 0; i < 0; i++) {
+//     let res = prompt("")
+//     arr.push(res)
+// }
+
+// let res = arr.filter(elem => {
+//     if(elem === "a" || elem === "e" || elem === "y" || elem === "i" || elem === "o"){
+//         return elem
+//     }
+// })
+// console.log(res);
+
+//cоздать массив с гласными и и через инклюд
+
+// let n = +prompt("");
+// const arr = [];
+// const arr_v = ["a", "e", "y", "u", "i", "o"];
+
+// for (let i = 0; i < n; i++) {
+//     arr.push(prompt(""))
+// }
+
+// let res = arr.filter(elem => {
+//     if(arr_v.includes(elem)) {
+//         return true;
+//     }
+// })
+// console.log(res);
+
+// 6. Посчитать количество согласных в строке. В задаче необходимо хоть как-то
+// затронуть forEach
+
+// const str = "Asd sdf ert tyu".trim().toLowerCase().split("");
+// const arr_v = ["a", "e", "y", "u", "i", "o"];
+// let chek = 0;
+
+// str.forEach(element => {
+//     if (arr_v.includes(element)){
+//         chek++
+//     }
+// });
+// console.log(chek);
+
+// 7. Найти значение массива, повторяющееся в нем наибольшее количество раз
+
+let n = +prompt("");
+const arr = [];
+
+for (let i = 0; i < n; i++) {
+    arr.push(prompt(""))
+}
+arr.sort();
+let a = 0;
+let b = 0;
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i - 1]) {
+        a++
+    } else {
+        b++
+    }
+}
+
+arr.split(" ")
+console.log(arr);
+
+//??????????????
+
+// 8. На вход программе подается строка текста содержащая «@». Разбить на массив.
+// Напишите программу, которая удаляет все вхождения символа «@». Как вы
+// думаете, что здесь применить: map, forEach, filter?
+// 123@1@@34 -> 123134
+
+// const str = "123@1@34".split("");
+
+// let res = str.filter(elem =>{
+//     if(elem !== "@"){
+//         return true;
+//     } else {
+//         return false
+//     }
+// })
+// console.log(res.join(""));
+
+// 9. На вход программе подается строка текста, вида “xxxx-xx-xx”. Разбить на массив.
+// Преобразуйте эту дату в формат “xx/xx/xxxx”. Как вы думаете, что здесь применить:
+// map, forEach, filter?
+
+// const str = "2022-09-04".replaceAll("-", " ").split(" ").reverse().join("/");
+// console.log(str);
+
+// const str = "2022-09-04".split("");  // этот способ не совсем корректно возвращает дату
+// const str1 = []
+// for (let i = str.length - 1; i >= 0; i--) {
+//     str1.push(str[i])
+// }
+// let res = str1.map(elem => {
+//     if (elem === "-") {
+//         return "/"
+//     } else {
+//         return elem
+//     }
+// })
+// console.log(res.join(""));
+
+// 10. На вход программе подается число n. Составить массив элементов от 1 до n.
+// Найти факториал числа. reduce
+
+// let n = +prompt("");
+// const arr = [];
+// for (let i = 0; i < n; i++) {
+//     arr.push(i+1)
+// }
+// let res = arr.reduce((pr, elem) => {
+//     return pr * elem
+// }, 1)
+// console.log(res);
+
+// 11. Разбить динамичный массив чисел на 2 массива: из четных и нечетных элементов.
+// forEach
+
+// let n = +prompt("");
+// const arr = [];
+// const arr_ch = [];
+// const arr_n = [];
+// for (let i = 0; i < n; i++) {
+//     let input = prompt("")
+//     if(!isNaN(input)) {
+//         arr.push(+input)
+//     }
+// }
+// arr.forEach( elem => {
+//     if (elem % 2 === 0){
+//         arr_ch.push(elem)
+//     } else {
+//         arr_n.push(elem)
+//     }
+// })
+// console.log(arr_ch);
+// console.log(arr_n);
+
+// 12. На вход программе подается строка текста в маленьком регистре. Разбить строку
+// на массив. Необходимо поставить каждый элемент массива в чередование
+// регистров toLowerCase, toUpperCase. Map
+// hschool -> HsChOoL
+
+// const str = "hschool".split("");
+
+// let res = str.map(elem => {
+//     if(str[0] === str[0].toUpperCase()) {
+//         elem.toLowerCase()
+//     }
+// })
+// console.log(res);
+
+// 13. *Дана строка состоящая из следующего набора скобок:
+// (, ), {, }, [ и ].
+// Каждой открывающей скобке соответствует закрывающая, образуя пары. Будем
+// считать строку удовлетворяющей условию задания, если все скобки закрываются
+// в нужном порядке, т.е: для каждой открывающей есть закрывающая из той же
+// пары; скобки закрываются в правильном порядке. При решении задачи
+// разрешается применять все известные вам на сегодняшний день методы
+// программирования для достижения поставленной задачи
+// ()[]{} -> true
+// {[]} -> true
+// ((()(()))) -> false
+// (] -> false
+// ([)] -> false
+
