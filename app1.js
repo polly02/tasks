@@ -241,3 +241,86 @@
 //     }
 // })
 // console.log(res);
+
+
+//08.09 функции
+// 1. Пользователь вводит имя фамилию. Необходимо создать функцию
+// возвращающую строку вида «Привет, {имя} {фамилия}»
+
+// const namse = prompt("")
+// const surname = prompt("")
+
+// function getName(name, surname) {
+//     return `Привет, ${name} ${surname}`
+// }
+// console.log(getName(namse, surname));
+
+
+// 2. Напишите функцию, которая принимает строку в маленьком регистре и
+// возаращает строку, где каждое слово начинается с большого регистра
+// hschool company -> Hschool Company
+
+// let str = prompt("").split(" ");
+
+// function getUpperCase(a) {
+//     let new_arr = a.map(el => {
+//         return el[0].toUpperCase()+el.slice(1).toLowerCase()
+//     })
+//     return new_arr.join(" ")
+// }
+// console.log(getUpperCase(str));
+
+// 3. Напишите функцию, которая принимает статичный массив строк. Необходимо
+// отфильтровать значения и оставить только те, где длина строк до 2 символов.
+// [“by”, “belarus”, “de”, “ru”, “germany”] -> [“by”, “de”, “ru”]
+
+// const arr = ["by", "belarus", "de", "ru", "germany"]
+
+// function getStaticArr(newArray) {
+//     let result = newArray.filter(el => el.length <= 2)
+//     return result
+// }
+
+// console.log(getStaticArr(arr));
+
+
+// 4. На входе массив. Необходимо создать функцию проверки на то что в массиве
+// только числа. Функция возвращает true, если в массиве только числа и false в
+// противном случае
+
+// const arr = [1, 2, 3, "asd", 5]
+
+// function chekArr(newArr) {
+//     let res = newArr.filter(el => {
+//         return !isNaN(el)
+//     })
+//     return newArr.length === res.length ? true : false
+// }
+
+// console.log(chekArr(arr));
+
+// 5. На входе n – количество элементов массива. Далее производится заполнение
+// массива с клавиатуры. Реализуйте 2 функции. Первая для формирования
+// массива. Вторая для нахождения количества элементов массива
+
+const n = +prompt("")
+
+function findCountElems(newArr) {
+    return newArr.length;
+}
+function doArr(value) {
+    let arr = []
+    for (let i = 0; i < value; i++) {
+        arr.push(prompt(""))
+    }
+    let count = findCountElems(arr)
+    return count
+}
+
+console.log(doArr(n));
+
+
+// 6. На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
+// только числа. Вторая для получения суммы всех элементов массива. Если
+// результат функции проверки – true, то вызывать новую функцию, возвращающую
+// сумму всех элементов массива
