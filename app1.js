@@ -97,11 +97,11 @@
 // let n = +prompt("")
 // for (let i = 0; i < n; i++) {
 //     let input = prompt("")
-//     if(!isNaN(input)) {
+//     if (!isNaN(input)) {
 //         arr.push(+input)
 //     }
 // }
-// obj.sum = arr.reduce ((sum, elem) =>  sum + elem, 0)
+// obj.sum = arr.reduce((sum, elem) => sum + elem, 0)
 // console.log(obj);
 
 // 13. На входе пустой объект; n – количество элементов рандомно сгенерированного
@@ -151,7 +151,7 @@
 //     7: 5
 // }
 
-// let res = obj.reduce((newObj, elem) => {
+// let res = obj.filter((newObj, elem) => {
 //     if (!obj.includes(obj[elem])) {
 //         newObj[elem] = elem
 //     }
@@ -175,7 +175,7 @@
 
 // 16. На входе объект из 5 свойств. Значения вводим с клавиатуры. Необходимо
 // проитерировать значения объекта и сформировать на основе этих чисел массив
-//????
+
 // const obj = {
 //     1: "",
 //     2: "",
@@ -187,59 +187,57 @@
 // for (const key in obj) {
 //     let input = +prompt("")
 //     obj[key] = input;
-// }
-// for (let i = 0; i <= Object.key(obj).length; i++){
 //     arr.push(obj[key])
-// }; 
+// }
 // console.log(arr);
 
 
 /////////////////////////
 
-const arr = [
-    { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
-    { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
-    { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
-    { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
-    { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
-];
+// const arr = [
+//     { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+//     { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
+//     { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
+//     { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
+//     { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
+// ];
 
-// 1. Read
-console.log(arr);
-// 2. Create.  Запушить в БД объект только в том случае, если нет совпадений по
-// label (добавить ключ id со значением label в toLowerCase). Если совпадение есть – ошибка
-const obj = { "label": "Test", "category": "test", "priority": 1 }
-let count = 0;
-for (let i = 0; i < arr.length; i++) {
-    if (arr[i].label !== obj.label) {
-        count++
-    }
-}
+// // 1. Read
+// console.log(arr);
+// // 2. Create.  Запушить в БД объект только в том случае, если нет совпадений по
+// // label (добавить ключ id со значением label в toLowerCase). Если совпадение есть – ошибка
+// const obj = { "label": "Test", "category": "test", "priority": 1 }
+// let count = 0;
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i].label !== obj.label) {
+//         count++
+//     }
+// }
 
-let a = obj.label.toLowerCase()
-const newObj = { id: a, ...obj }
+// let a = obj.label.toLowerCase()
+// const newObj = { id: a, ...obj }
 
-if (count === arr.length) {
-    arr.push(newObj)
-    console.log(arr);
-} else {
-    console.log("error");
-}
-// 3. Update
-// Необходимо найти id клиента в массиве БД. Если совпадение есть, произвести обновление значений для соответствующих
-// ключей.
-// Примечание: для удаления объекта в БД можно отфильтровать объект БД не включая id клиента. В результативный массив 
-// запушить клиентский, тем самым обновить объект БД
-// Если совпадения по id нет – ошибка 
+// if (count === arr.length) {
+//     arr.push(newObj)
+//     console.log(arr);
+// } else {
+//     console.log("error");
+// }
+// // 3. Update
+// // Необходимо найти id клиента в массиве БД. Если совпадение есть, произвести обновление значений для соответствующих
+// // ключей.
+// // Примечание: для удаления объекта в БД можно отфильтровать объект БД не включая id клиента. В результативный массив
+// // запушить клиентский, тем самым обновить объект БД
+// // Если совпадения по id нет – ошибка
 
-//??????????????
-const obj1 = { "id": "test", "label": "Test", "category": "test", "priority": 2 };
-const res = arr.reduce((nObj, elem) => { 
-    if (nObj[id] === obj1[id]) {
-        delete nObj 
-        arr.push(obj1)
-    } else {
-        console.log("error");
-    }
-})
-console.log(res);
+// //??????????????
+// const obj1 = { "id": "test", "label": "Test", "category": "test", "priority": 1 };
+// const res = arr.reduce((nObj, elem) => {
+//     if (nObj[id] === obj1[id]) {
+//         delete nObj
+//         arr.push(obj1)
+//     } else {
+//         console.log("error");
+//     }
+// })
+// console.log(res);
