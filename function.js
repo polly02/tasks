@@ -73,22 +73,15 @@
 // результат функции проверки – true, то вызывать новую функцию, возвращающую
 // сумму всех элементов массива
 
-// const arr = [1, 2, 4, 5, 6, "a"];
+// const arr = [1, 2, 4, 5, 6];
 
 // function checkArray (a) {
 //     const res = a.filter(el => !isNaN(el))
-//     // return a.length = res.length ? getSumma(a) : false // почему-то ошибка
-//     if (a.length === res.length) {
-//        return getSumma(a) //или тут передаем res?
-//     } else{
-//         return false
-//     }
+//     return a.length === res.length ? getSumma(a) : false 
 // }
 
 // function getSumma (b) {
-//     const sum = b.reduce((sum,el) => {
-//         return sum + el
-//     }, 0)
+//     const sum = b.reduce((sum,el) => sum + el, 0)
 //     return sum
 // }
 // console.log(checkArray(arr));
@@ -102,17 +95,11 @@
 
 // function checkArray (a) {
 //     const res = a.filter(el => isNaN(el))
-//     if (a.length === res.length) {
-//         return getSummaOfStrings(a)
-//     } else {
-//         return false
-//     }
+//     return a.length === res.length ? getSummaOfStrings(a) : false
 // }
 
 // function getSummaOfStrings(b) {
-//     const sum = b.reduce((sum, el) => {
-//         return sum + el
-//     }, "")               // надо ли тут кавычки пустые в конце
+//     const sum = b.reduce((sum, el) => sum + el, "")               // надо ли тут кавычки пустые в конце
 //     return sum
 // }
 // console.log(checkArray(arr));
@@ -122,14 +109,42 @@
 // элемента. Если результат функции проверки – true, то вызывать новую функцию,
 // возвращающую массив с удвоенными элементами
 
+// const arr = [1, 2, 3, 4, 5];
 
+// function getDoubleValues(a) {
+//     let res = a.map(el => el * 2)
+//     return res
+// }
+
+// function checkArray(b) {
+//     let res = b.filter(el => !isNaN(el))
+//     return b.length === res.length ? getDoubleValues(b) : false
+// }
+
+// console.log(checkArray(arr));
 
 // 9. На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
 // только числа. Вторая для получения только четных элементов массива. Если
 // результат функции проверки – true, то вызывать новую функцию, возвращающую
 // массив с четными элементами массива
+
+// const arr = [1, 2, 4, 5, 67, 8];
+
+// function getArrayWithEvenNumbers(a) {
+//     let newArr = a.filter(el => el % 2 === 0)
+//     return newArr
+// }
+
+// function checkArray(b) {
+//     let res = b.filter(el => !isNaN(el))
+//     return b.length === res.length ? getArrayWithEvenNumbers(b) : false
+// }
+// console.log(checkArray(arr));
+
 // 10. На входе число. Необходимо создать функцию, возвращающую факториал числа
 // 4! = 1 * 2 * 3 * 4
+
+
 // 11. На входе строка. Необходимо создать функцию, возвращающую true, если это
 // слово палиндром и false в противном случае
 // 12. На входе строка. Необходимо создать функцию, возвращающую true, если это
