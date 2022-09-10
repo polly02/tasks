@@ -303,21 +303,21 @@
 // массива с клавиатуры. Реализуйте 2 функции. Первая для формирования
 // массива. Вторая для нахождения количества элементов массива
 
-const n = +prompt("")
+// const n = +prompt("")
 
-function findCountElems(newArr) {
-    return newArr.length;
-}
-function doArr(value) {
-    let arr = []
-    for (let i = 0; i < value; i++) {
-        arr.push(prompt(""))
-    }
-    let count = findCountElems(arr)
-    return count
-}
+// function findCountElems(newArr) {
+//     return newArr.length;
+// }
+// function doArr(value) {
+//     let arr = []
+//     for (let i = 0; i < value; i++) {
+//         arr.push(prompt(""))
+//     }
+//     let count = findCountElems(arr)
+//     return count
+// }
 
-console.log(doArr(n));
+// console.log(doArr(n));
 
 
 // 6. На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
