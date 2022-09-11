@@ -42,33 +42,6 @@
 
 // 
 
-// 7. Найти значение массива, повторяющееся в нем наибольшее количество раз
-
-// const arr = [1, 2, 3, 3, 4, 5, 5, 5, 5].sort();
-// const a = []; //сами элементы
-// const b = {}; //кол-во повторение элементов
-
-// arr.forEach(elem => {
-//     if (a.includes(elem)) {
-//         b[elem] += "1"
-//     } else {
-//         a.push(elem)
-//         b[elem] = "1"
-//     }
-// })
-// console.log(b);
-// let max = 0
-// for (let i = 0; i < a.length + 1; i++) {
-
-//     if (b[i] > b[i + 1]) {
-//         max = i
-//     } else if (max < b[i + 1]) {
-//         max = (i + 1)
-//     }
-// }
-// console.log(max);
-
-
 // 13. *Дана строка состоящая из следующего набора скобок:
 // (, ), {, }, [ и ].
 // Каждой открывающей скобке соответствует закрывающая, образуя пары. Будем
@@ -85,24 +58,7 @@
 
 
 
-
 // 05.09 объекты
-
-// 12. На входе пустой объект, массив, n – количество элементов массива. Далее
-// производится заполнение массива с клавиатуры. Добавить в объект ключ “sum”,
-// значение – сумма элементов массива(reduce). Добавить проверки на ввод чисел
-
-// const obj = {};
-// const arr = [];
-// let n = +prompt("")
-// for (let i = 0; i < n; i++) {
-//     let input = prompt("")
-//     if (!isNaN(input)) {
-//         arr.push(+input)
-//     }
-// }
-// obj.sum = arr.reduce((sum, elem) => sum + elem, 0)
-// console.log(obj);
 
 // 13. На входе пустой объект; n – количество элементов рандомно сгенерированного
 // массива. Необходимо заполнить пустой объект, где ключи – циклично
@@ -157,89 +113,6 @@
 //     }
 //     return newObj
 // }, {})
-// console.log(res);
-
-// 15. На входе массив чисел. На основе этого массива сформировать объект, где ключ –
-// число массива, значение – true/false. True – число четное, false – нечетное
-
-// const arr = [1, 2, 3, 4, 5];
-// const obj = arr.reduce((newObj, elem) => {
-//     if (elem % 2 === 0) {
-//         newObj[elem] = true;
-//     } else {
-//         newObj[elem] = false;
-//     }
-//     return newObj
-// }, {})
-// console.log(obj);
-
-// 16. На входе объект из 5 свойств. Значения вводим с клавиатуры. Необходимо
-// проитерировать значения объекта и сформировать на основе этих чисел массив
-
-// const obj = {
-//     1: "",
-//     2: "",
-//     3: "",
-//     4: "",
-//     5: ""
-// }
-// const arr = []
-// for (const key in obj) {
-//     let input = +prompt("")
-//     obj[key] = input;
-//     arr.push(obj[key])
-// }
-// console.log(arr);
-
-
-/////////////////////////
-
-// const arr = [
-//     { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
-//     { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
-//     { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
-//     { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
-//     { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
-// ];
-
-// // 1. Read
-// console.log(arr);
-// // 2. Create.  Запушить в БД объект только в том случае, если нет совпадений по
-// // label (добавить ключ id со значением label в toLowerCase). Если совпадение есть – ошибка
-// const obj = { "label": "Test", "category": "test", "priority": 1 }
-// let count = 0;
-// for (let i = 0; i < arr.length; i++) {
-//     if (arr[i].label !== obj.label) {
-//         count++
-//     }
-// }
-
-// let a = obj.label.toLowerCase()
-// const newObj = { id: a, ...obj }
-
-// if (count === arr.length) {
-//     arr.push(newObj)
-//     console.log(arr);
-// } else {
-//     console.log("error");
-// }
-// // 3. Update
-// // Необходимо найти id клиента в массиве БД. Если совпадение есть, произвести обновление значений для соответствующих
-// // ключей.
-// // Примечание: для удаления объекта в БД можно отфильтровать объект БД не включая id клиента. В результативный массив
-// // запушить клиентский, тем самым обновить объект БД
-// // Если совпадения по id нет – ошибка
-
-// //??????????????
-// const obj1 = { "id": "test", "label": "Test", "category": "test", "priority": 1 };
-// const res = arr.reduce((nObj, elem) => {
-//     if (nObj[id] === obj1[id]) {
-//         delete nObj
-//         arr.push(obj1)
-//     } else {
-//         console.log("error");
-//     }
-// })
 // console.log(res);
 
 

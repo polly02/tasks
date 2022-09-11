@@ -6,6 +6,9 @@ let arr = [
     { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
 ];
 
+// 2. Create.  Запушить в БД объект только в том случае, если нет совпадений по
+// label (добавить ключ id со значением label в toLowerCase). Если совпадение есть – ошибка
+
 // const obj =  { "label": "Test", "category": "test", "priority": 1 }
 
 // const arr1 = arr.filter( elem => elem.label !== obj.label)
