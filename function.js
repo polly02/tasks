@@ -144,8 +144,115 @@
 // 10. На входе число. Необходимо создать функцию, возвращающую факториал числа
 // 4! = 1 * 2 * 3 * 4
 
+// let n = +prompt("enter number");
+// // let n = 4
+
+// function getFactorial(a) {
+//     let res = 1
+//     for (let i = 1; i <= a; i++) {
+//         res *= i
+//     }
+//     return res
+// }
+
+// console.log(getFactorial(n));
 
 // 11. На входе строка. Необходимо создать функцию, возвращающую true, если это
 // слово палиндром и false в противном случае
+
+// const str = "mem"
+
+// function getWordPalindrom(a) {
+//     return a === a.split("").reverse().join("") ? true : false
+// }
+
+// console.log(getWordPalindrom(str));
+
 // 12. На входе строка. Необходимо создать функцию, возвращающую true, если это
 // слово анаграмма и false в противном случае
+
+// const str1 = "дорога".split("").sort().join("");
+// const str2 = "города".split("").sort().join("");
+
+// function getWordAnagramma(a, b) {
+//     return a === b && a.length === b.length ? true : false
+// }
+
+// console.log(getWordAnagramma(str1, str2));
+
+// 13. На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
+// только числа. Вторая для поиска максимального значения в массиве. Если
+// результат функции проверки – true, то вызывать новую функцию, возвращающую
+// максимальное значение массива
+
+// const arr = [1, 2, 3, 10, -7, 0, 9];
+
+// function getMaxValue(a) {
+//     return Math.max(...a)
+// }
+
+// function checkArray(b) {
+//     let res = b.filter(el => !isNaN(el))
+//     return b.length === res.length ? getMaxValue(b) : false
+// }
+
+// console.log(getMaxValue(arr));
+
+// 14. На входе n – количество элементов массива. Далее производится заполнение
+// массива с клавиатуры. Реализуйте 3 функции. Первая для формирования
+// массива. Вторая для проверки, что в массиве только числа. Третья для получения
+// произведения всех элементов массива. Если результат функции проверки – true,
+// то вызывать новую функцию, возвращающую произведение всех элементов
+// массива
+
+// let n = +prompt("enter number");
+
+// function doArr(a) {
+//     const arr = []
+//     for (let i = 0; i < a; i++) {
+//         arr.push(prompt(""))
+//     }
+//     return checkArray(arr)
+// }
+
+// function checkArray(b) {
+//     let res = b.filter(el => !isNaN(el))
+//     return b.length === res.length ? getResult(b) : false
+// }
+
+// function getResult(c) {
+//     let result = c.reduce((pr,el) => pr*el, 1)
+//     return result
+// }
+
+// console.log(doArr(n));
+
+// 15. На входе n – количество элементов массива. Далее производится заполнение
+// массива с клавиатуры. Реализуйте 3 функции. Первая для формирования
+// массива. Вторая для проверки, что в массиве только числа. Третья для
+// формирования массива из всех четных чисел, возведенных в квадрат. Если
+// результат функции проверки – true, то вызывать новую функцию, возвращающую
+// массив из всех четных чисел, возведенных в квадрат
+
+// let n = +prompt("enter number");
+
+// function doArr(a) {
+//     const arr = [];
+//     for (let i = 0; i < a; i++) {
+//         arr.push(prompt(""))
+//     }
+//     return checkArray(arr)
+// }
+
+// function checkArray(b) {
+//     let res = b.filter(el => !isNaN(el))
+//     return b.length === res.length ? getResult(b) : false
+// }
+
+// function getResult(c) {
+//     let res = c.filter(el => el % 2 === 0)
+//     let result = res.map(el => el**2)
+//     return result
+// }
+
+// console.log(doArr(n));
