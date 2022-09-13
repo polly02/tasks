@@ -385,3 +385,77 @@
 // console.log(wrapper());
 // console.log(wrapper());
 // console.log(wrapper());
+
+// 1. Работа с замыканием. Необходимо реализовать конкатенацию строк при каждом
+// последующем вызове функции
+
+// function multiply() {
+//     let str = ""
+//     return function() {
+//         str += prompt("")
+//         return str
+//     }
+// }
+
+// const wrapper = multiply();
+// console.log(wrapper());
+// console.log(wrapper());
+// console.log(wrapper());
+// console.log(wrapper());
+
+// 2. Напишите функцию, принимающую в качестве параметра строку. Необходимо
+// оставить в строке только униакльные символы. IIFE
+// Позволяеткопироватьтекстиз -> позвляеткираьс
+
+// const str = "Позволяеткопироватьтекстиз".toLowerCase().split("");
+
+// function getUniqueSymbols(string) {
+//     let newString = []
+//     for(let i = 0; i< string.length; i++) {
+//         if(!newString.includes(string[i])) {
+//             newString.push(string[i])
+//         }
+//     }
+//     return newString.join("")
+// }
+
+// console.log(getUniqueSymbols(str));
+
+// 3. На входе динамичный массив; число n с клавиатуры. Необходимо написать
+// функцию, возвращающую элементы массива, которые больше указанного числа.
+// [1, 9, 45, 11, 10], 10 -> 45, 11
+
+// let count = +prompt("enter number of array's elements");
+// let n = +prompt("enter random number");
+
+// function getBigElements(arr, n) {
+//     let res = arr.filter(el => el>n)
+//     return res
+// }
+
+// function doArr(count) {
+//     const arr = [];
+//     for (let i = 0; i < count; i++) {
+//         arr.push(prompt("enter array's elements"))
+//     }
+//     return arr
+// }
+
+// const data = doArr(count);
+// console.log(getBigElements(data, n));
+
+// 3.1.Напишите функцию, которая принимает два параметра: строку и букву. Функция
+// должна подсчитывать количество вхождений указанной буквы в строке. Добавить
+// проверки
+
+
+
+// 4. Напишите функцию, принимающую в качестве параметра статичный объект.
+// Функция возвращает новый объект, где значения – исключительно числа
+// первоначального объекта. IIFE
+// 5. Работа с замыканием. Напишите функцию, каждый вызов который будет
+// генерировать случайные числа от 1 до 100, но так, чтобы они не повторялись, пока
+// не будут перебраны все числа из этого промежутка.
+// 6. Напишите функцию, принимающую в качестве параметра статичный объект.
+// Функция возвращает количество пар ключ / знаечение. IIFE
+// 7. Напишите функцию, генерирующую надежный пароль. (Math.random)
