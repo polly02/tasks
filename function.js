@@ -256,3 +256,132 @@
 // }
 
 // console.log(doArr(n));
+
+
+//12.09
+
+// 1. На входе число n. Напишите функцию, которая переворачивает число.
+
+// let n = 517;
+
+// function doReverse(number) {
+//     return String(number).split("").reverse().join("")
+// }
+
+// console.log(doReverse(n));
+
+// 2. На входе n – количество элементов массива. Далее производится заполнение
+// массива с клавиатуры. Напишите функцию, которая принимает массив строк и
+// находим там наибольшее по длине текстовое значение. Добавить проверки
+
+// let n = +prompt("enter number");
+
+// function findLength(arr) {
+//     if (checkArray(arr)) {
+//         let res = arr[0]
+//         arr.forEach(element => element.length > res.length ? res = element : null);
+//         return res
+//     } else {
+//         return "error"
+//     }
+// }
+
+// function doArr(number) {
+//     const arr = []
+//     for (let i = 0; i < number; i++) {
+//         arr.push(prompt(""))
+//     }
+//     return arr
+// }
+
+// function checkArray(arr) {
+//     let res = arr.filter(el => isNaN(el))
+//     return arr.length === res.length ? true : false
+// }
+
+// const data = doArr(n);
+// console.log(findLength(data));
+
+// 3. Напишите функцию, которая принимает почту и возвращает объект, вида
+// {
+// email,
+// active: true / false
+// }
+// true, если почта содержит @, .com / .ru. False в противном случае
+
+// const email = "asd@.com";
+
+// function getEmail(mail) {
+//     const obj = {
+//         email: mail
+//     }
+//     if (mail.includes("@") && mail.endsWith(".com") || mail.endsWith(".ru")) {
+//         obj.active = true
+//         return obj 
+//     } else {
+//         obj.active = false
+//         return obj 
+//     }
+// }
+
+// console.log(getEmail(email));
+
+// 4. Напишите функцию, которая принимает массив чисел и находит минимальное и
+// максимальное числа соответственно. Добавить проверки на ввод и если
+// значения массива не соответствуют условию задания, вывести сообщение об
+// ошибке.
+
+// let n = +prompt("enter number");
+
+// function getMinMaxValue(arr) {
+//     if (checkArray(arr)) { 
+//         return `min ${Math.min(...arr)}, max ${Math.max(...arr)}` 
+//     } else return "error"
+// }
+
+// function checkArray(newArr) {
+//     let res = newArr.filter(el => !isNaN(el))
+//     return newArr.length === res.length ? true : false
+// }
+
+// function doArr(number) {
+//     const arr = []
+//     for (let i = 0; i < number; i++) {
+//         arr.push(prompt("enter elements of array"))
+//     }
+//     return arr
+// }
+
+// const data = doArr(n)
+// console.log(getMinMaxValue(data));
+
+// 5. На входе строка в виде пароля. Необходимо написать функцию на проверку, что
+// пароль является надежным (содержит хотя бы 1 букву в большом регистре, числа,
+// буквы, символ, длина не менее 8 символов)
+
+// const pass = "Asdf1234".split("")
+
+// function checkPassword (password) {
+//     let res1 = password.some(elem => elem.toUpperCase() ? true : false)
+//     let res2 = password.some(elem => !isNaN(elem) ? true : false)
+//     return res1 && res2 && password.length >= 8 ? true : false
+// }
+
+// console.log(checkPassword(pass));
+
+// 6. Работа с замыканием. Реализуйте функцию, которая будет считать количество
+// своих вызовов
+
+// function multiply() {
+//     let count = 0;
+//     return function() {
+//         count++;
+//         return count;
+//     }
+// }
+
+// const wrapper = multiply();
+// console.log(wrapper());
+// console.log(wrapper());
+// console.log(wrapper());
+// console.log(wrapper());
