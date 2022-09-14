@@ -448,14 +448,68 @@
 // должна подсчитывать количество вхождений указанной буквы в строке. Добавить
 // проверки
 
+// let str = "asdasdfghjyfsgd";
+// let l = "s";
 
+// function getNumber(str, l) {
+//     let count = 0;
+//     for (let i = 0; i < str.length; i++) {
+//         if(str[i] === l) {
+//             count++
+//         }
+//     }
+//     return count
+// }
+
+// console.log(getNumber(str, l));
 
 // 4. Напишите функцию, принимающую в качестве параметра статичный объект.
 // Функция возвращает новый объект, где значения – исключительно числа
 // первоначального объекта. IIFE
+
+// const obj = {
+
+// }
+
 // 5. Работа с замыканием. Напишите функцию, каждый вызов который будет
 // генерировать случайные числа от 1 до 100, но так, чтобы они не повторялись, пока
 // не будут перебраны все числа из этого промежутка.
+
+// function multiply() {
+//     let str = "";
+//     return function () {
+//         let n = Math.round(Math.random() * 100)
+//         if (!str.includes(n)){
+//             return n
+//         }
+//     }
+// }
+
+// const wrapper = multiply()
+// console.log(wrapper());
+// console.log(wrapper());
+// console.log(wrapper());
+
 // 6. Напишите функцию, принимающую в качестве параметра статичный объект.
 // Функция возвращает количество пар ключ / знаечение. IIFE
+
+// const obj = {
+//     a: 1,
+//     b: 2,
+//     c: 3
+// }
+
+// function getNumberOfPair(object) {
+//     let count = 0
+//     for(let key in object){
+//         if(key) {
+//             count++
+//         }
+//     }
+//     return count
+// }
+
+// console.log(getNumberOfPair(obj));
+
 // 7. Напишите функцию, генерирующую надежный пароль. (Math.random)
+
