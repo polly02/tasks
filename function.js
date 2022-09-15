@@ -513,3 +513,53 @@
 
 // 7. Напишите функцию, генерирующую надежный пароль. (Math.random)
 
+// const n = 8; // length of password
+
+// function getPassword(pass) {
+//     let pas = []
+//     for (let i = 0; i < pass; i++) {
+//         pas.push(Math.round(Math.random() * 100))
+//     }
+//     return pas.join("")
+// }
+
+// console.log(getPassword(n));
+
+// 1. *Напишите функцию, рассчитывающую ряд Фибоначчи используя рекурсию.
+// Числа Фибоначчи – ряд натуральных (целых и положительных) чисел, каждое из
+// которых является суммой двух предыдущих: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233
+
+// const value = 8
+// const arr = [1, 1];
+
+// // for (let i = 0; i < value - 2; i++) {
+// //     arr.push(arr[i] + arr[i + 1])
+// // }
+// // console.log(arr);
+
+// function getFibonacciSeries(array, number) {
+//     let i = 0;
+//     if (i < number - 2) {
+//         array.push(array[i] + array[i + 1])
+//         i++
+//     } 
+//     // for (let i = 0; i < number - 2; i++) {
+//     //     array.push(array[i] + array[i + 1])
+//     // }
+//     return getFibonacciSeries(array, number)
+// }
+
+// console.log(getFibonacciSeries(arr, value));
+
+// 2. *Вычислите сумму массива целых чисел статичного массива используя рекурсию
+
+// const arr = [1, 2, 5, 6, -7, 5];
+
+// function getSumma(array) {
+//     if (array.length === 1) {
+//         return array[0]
+//     } else {
+//         return array[0] + getSumma(array.slice(1))
+//     }
+// }
+// console.log(getSumma(arr));
