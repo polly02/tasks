@@ -563,3 +563,103 @@
 //     }
 // }
 // console.log(getSumma(arr));
+
+
+//15.09
+
+// 1. На входе строка в виде пароля. Необходимо написать функцию на проверку, что
+// пароль является надежным (содержит хотя бы 1 букву в большом регистре, числа,
+// буквы, символ, длина не менее 8 символов)
+
+// const pwd = "passwoRD@77".split("");
+
+// function isValid(pas) {
+//     const symbols = ["@", "-", "_", "&", "#", "1"]
+//     let boolUpperValue = pas.some(el => el === el.toUpperCase() ? true : false);
+//     let boolNumValue = pas.some(el => !isNaN(el) ? true : false);
+//     let boolStrValue = pas.some(el => isNaN(el) ? true : false);
+//     let count = 0;
+//     for (let i = 0; i < pas.length; i++) {
+//         if (symbols.includes(pas[i])) {
+//             count++
+//         }
+//     }
+
+//     return boolUpperValue && boolNumValue && boolStrValue && count > 0 && pas.length > 8
+// }
+
+// console.log(isValid(pwd));
+
+// 2. Реализуйте функцию searchBinary, которая принимает 2 параметра: значение и
+// массив. Функция возвращает индекс, где значение встречается в массиве, если
+// найдено. Если значение не найдено, возвращается сообщение об ошибке.
+
+//бинарный поиск
+
+// function searchBinary(value, array) {
+//     let start = 0;
+//     let end = array.length - 1;
+//     let middle = Math.floor((start + end) / 2);
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[middle] === value) {
+//             return middle;
+//         } else {
+//             if(array[middle] < value){
+//                 start = middle + 1;
+//             } else {
+//                 end = middle - 1;
+//             }
+//             middle = Math.floor((start + end) / 2);
+//         }
+//     }
+//     return middle
+// }
+
+// console.log(searchBinary(8, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+// 3. Реализуйте функцию, которая определяет корректную расположение скобок.
+// ( ) [ ] { } -> true
+// ( ) [ ] { } ) ( ) ) -> false
+
+// function isValid(str) {
+//     const block = {
+//         ")": "(",
+//         "]": "[",
+//         "}": "{"
+//     }
+//     const res = []
+//     const close = ["}", "]", ")"]
+//     for (let el of str){
+//         if(close.includes(el)) {
+//             if(block[el] != res.pop()) return false
+//         } else {
+//             res.push(el)
+//         }
+//     }
+//     return true
+// }
+
+// console.log(isValid("(){}[]"));
+
+// 4. Реализуйте функцию на генерацию ряда Фибоначчи используя рекурсию
+//вернуть 5 чило Фибоначчи (0, 1, 1, 2, 3, 5, 8, 13, 21)
+
+// function fibon(num) {
+//     if (num < 2) return num;
+//     return fibon(num - 2) + fibon(num - 1)
+// }
+// console.log(fibon(5));
+
+// без рекурсии
+// // function fibon(num) {
+// //     let arr = [0, 1]
+// //     if (num < 2) {
+// //         return arr[num - 1]
+// //     }
+// //     for (let i = 2; i <= num; i++) {
+// //         arr.push(arr[i - 1] + arr[i - 2])
+// //     }
+// //     return arr[num]
+// // }
+
+// 5. Вычислите сумму массива целых чисел статичного массива используя рекурсию
