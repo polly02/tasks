@@ -775,34 +775,155 @@
 // Обр диапазоне 10<nатите внимание, тут как минимум 3 функции. Первая:
 // формирование массива. Вторая: валидация. Третья: основная логика задачи
 
-const n = +prompt("enter the number");
+// const n = +prompt("enter the number");
 
-function doArr(n) {
-    const arr = [];
-    for (let i = 0; i < n; i++) {
-        arr.push(Math.floor(Math.random() * 100))
-    }
-    return arr;
-}
+// function doArr(n) {
+//     const arr = [];
+//     for (let i = 0; i < n; i++) {
+//         arr.push(Math.floor(Math.random() * 100))
+//     }
+//     return arr;
+// }
 
-function checkArr(arr) {
-    if (Array.isArray(arr)) throw new Error("не массив")
-    if (arr.some(el => isNaN(el))) throw new Error("в массиве не только числа")
-    if (arr.some(el => el < 0)) throw new Error("в массиве отрицательыне числа")
-    return true
-}
+// function checkArr(arr) {
+//     if (Array.isArray(arr)) throw new Error("не массив")
+//     if (arr.some(el => isNaN(el))) throw new Error("в массиве не только числа")
+//     if (arr.some(el => el < 0)) throw new Error("в массиве отрицательыне числа")
+//     return true
+// }
 
-function doNewArray(arr) {
-    try {
-        if (checkArr(arr)) {
-            const newArr = arr.filter(el => el >= 10 && el <= 100);
-            if (!newArr.length) throw new Error("все элемены не удовлетворяют условию")
-            return newArr
-        }
-    } catch (error) {
-        return error.massage
-    }
-}
+// function doNewArray(arr) {
+//     try {
+//         if (checkArr(arr)) {
+//             const newArr = arr.filter(el => el >= 10 && el <= 100);
+//             if (!newArr.length) throw new Error("все элемены не удовлетворяют условию")
+//             return newArr
+//         }
+//     } catch (error) {
+//         return error.massage
+//     }
+// }
 
-const randomArray = doArr(n)
-console.log(doNewArr(randomArray));
+// const randomArray = doArr(n)
+// console.log(doNewArr(randomArray));
+
+// 6. Реализуйте функцию, которая принимает 3 целочисленных значения a, b, c.
+// Функция должна возвращать true, если можно построить треугольник со
+// сторонами заданной длины, и false в любом другом случае. Треугольник
+// существует только тогда, когда сумма двух его сторон больше третьей. Требуется
+// сравнить каждую сторону с суммой двух других. Если хотя бы в одном случае
+// сторона окажется больше либо равна сумме двух других, то треугольника с
+// такими сторонами не существует.
+
+// let a = prompt("enter the number");
+// let b = prompt("enter the number");
+// let c = prompt("enter the number");
+
+// function buildTriangle(a, b, c) {
+//     try {
+//         if (isNaN(a) || isNaN(b) || isNaN(c)) throw new Error("одно из введеных значений не число")
+//         return (+a + +b > +c && +a + +c > +b && +b + +c > +a) ? true : false
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(buildTriangle(a, b, c));
+
+// 7. Реализуйте функцию, которая принимает число и возвращает возвенную в
+// квадрат каждую цифру числа соединяя их. Добавить проверки
+// 9119 -> 811181 (9^2 === 81, 1^2=== 1)
+
+// let n = prompt("enter the number");
+
+// function doubleNumbers(num) {
+//     try {
+//         if (isNaN(num)) throw new Error("введенное значение не число");
+//         let a = ""
+//         for (let i = 0; i < num.length; i++) {
+//             a += num[i] ** 2
+//         }
+//         return a
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(doubleNumbers(n));
+
+// 8. Реализуйте функцию, которая принимает массив последовательных
+// (возрастающих) букв и возвращает отсутствующую в массиве. Добавить проверки
+// ["a","b","c","d","f"] -> "e"
+// ["O","Q","R","S"] -> "P"
+
+// let arr = ["a", "b", "c", "d", "f"];
+
+// function findLostElement(arr) {
+//     try {
+//         if (arr.some(el => !isNaN(el))) throw new Error("в массиве не только буквы")
+//         const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy'
+
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(findLostElement(arr));
+
+// 9. Мальчик идет долгим путем со школы домой. Чтобы сделать прогулку веселее, он
+// складывает все номера домов, мимо которых проходит. К сожалению, не на всех
+// домах написаны номера, к тому же мальчик регулярно меняет улицы по очереди,
+// поэтому номера не представляются ему в определенном порядке.
+// В какой-то момент во время прогулки мальчик встречает дом с написанным на
+// нем 0 номером. Это настолько его удивляет, что он перестает прибавлять числа к
+// своей сумме сразу после того, как видит этот дом.
+// Для заданной последовательности домов определите сумму, которую получит
+// мальчик. Гарантируется, что на пути всегда будет хотя бы один нулевой дом.
+// Добавить проверку, что номера домов – только числа.
+// [5, 1, 2, 3, 0, 1, 5, 0, 2] –> 11 (5 + 1 + 2 + 3 = 11)
+
+// const arr = [5, 1, 2, 3, 0, 1, 5, 0, 2];
+
+// function checkArr(arr) {
+//     if (arr.some(el => isNaN(el))) throw new Error("в массиве есть строки");
+//     if (arr.some(el => el < 0)) throw new Error("в массиве отрицательыне числа");
+//     return true
+// }
+
+// function getSumma(arr) {
+//     try {
+//         if (checkArr(arr)) {
+//             let sum = 0
+//             for (let i = 0; i < arr.length; i++) {
+//                 if (arr[i] !== 0) {
+//                     sum += arr[i]
+//                 } else {
+//                     break
+//                 }
+//             }
+//             return sum
+//         }
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(getSumma(arr));
+
+// 10. На вход подается строка в виде электронной почты пользователя. Необходимо
+// найти в данной почте “@”. Если же есть, то вывести булевое true, в противном
+// случае бросить исключение и его обработать
+
+// const email = "polina@gmail.com";
+
+// function checkEmail(mail) {
+//     try {
+//         const bool = mail.includes("@")
+//         if(!bool) throw new Error ("неверный формат почты")
+//         return true
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(checkEmail(email));
