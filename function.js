@@ -663,3 +663,146 @@
 // // }
 
 // 5. Вычислите сумму массива целых чисел статичного массива используя рекурсию
+
+
+//18.09 - errors
+
+// 1. На входе значение. Необходимо его обработать. Если это число и оно не является
+// четным, бросить исключение
+
+// const num = prompt("enter num");
+
+// function doData(num) {
+//     try {
+//         if (!isNaN(num) || num % 2 === 1) throw new Error("нечетное или строка")
+//         return num
+//     } catch (error) {
+//         return error.message;
+//     }
+// }
+// console.log(doData(num));
+
+// 2. На входе массив значений. Необходимо его обработать. Если в массиве есть хотя
+// бы 1 строка, бросить исключение.
+
+// const arr = [1, 2, 3, 4, "text", 5]
+
+// function checkArray(x) {
+//     try {
+//         let bool = x.every(el => !isNaN(el) ? false : true)
+//         if (!bool) throw new Error("одно значение не число")
+//         return x
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(checkArray(arr));
+
+// 3. Дан массив чисел внутри строки. Необходимо строку преобразовать в массив
+// используя JSON.parse. Если же после того как вы спарсили данные у вас не
+// массив, то бросить исключение. Добавить проверку на числа. Далее вывести
+// только те числа, которые кратны 3
+
+// const json = `[
+//         { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+//         { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
+//         { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
+//         { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
+//         { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3}
+//         ]`
+
+// let parsedData = JSON.parse(json)
+
+// function checkNum(arr) {
+//     let count = 0
+//     arr.forEach(el => isNaN(el.priority) ? count++ : null)
+//     if (count > 0) throw new Error(("это не число"))
+//     return true
+// }
+
+// function findPriority(arr) {
+//     try {
+//         if (checkNum(arr)) {
+//             const newArr = arr.filter(el => el.priority % 3 === 0)
+//             if (!newArr.length) throw new Error(("нет чисел кратных 3"))
+//             return newArr
+//         }
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(findPriority(parsedData));
+
+// 4. Дана строка массива. Необходимо спарсить строку и преобразовать в массив.
+// Если же после того как вы спарсили данные у вас не массив, то бросить
+// исключение. Далее вывести те элементы массива, в котрых id – четное значение
+
+// const json = `[
+//         { "id": 1, "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+//         { "id": 2, "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
+//         { "id": 3, "label": "SQL", "category": "programmingLanguages", "priority": 2 },
+//         { "id": 4, "label": "Java", "category": "programmingLanguages", "priority": 3 },
+//         { "id": 5, "label": "GO", "category": "programmingLanguages", "priority": 3}
+//         ]`
+
+// let parsedData = JSON.parse(json)
+
+// function checkArr(arr) {
+//     if (!Array.isArray(arr)) throw new Error("это не массив")
+//     if (arr.some(el => isNaN(el.id))) throw new Error("есть строки")
+//     return true
+// }
+
+// function findValue(arr) {
+//     try {
+//         if(checkArr(arr)) {
+//             const newArr = arr.filter( el => el.id % 2 === 0)
+//             if(!newArr.length) throw new Error ("нет четных id")
+//             return newArr
+//         }
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(findValue(parsedData));
+
+// 5. На вход подается число n – количество элементов массива. Необходимо
+// заполнить массив случайными элементами. Если значение массива находится в диапазоне 0 <
+// 100, то занести в новый массив. Добавить проверки и обработать их.
+// Обр диапазоне 10<nатите внимание, тут как минимум 3 функции. Первая:
+// формирование массива. Вторая: валидация. Третья: основная логика задачи
+
+const n = +prompt("enter the number");
+
+function doArr(n) {
+    const arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(Math.floor(Math.random() * 100))
+    }
+    return arr;
+}
+
+function checkArr(arr) {
+    if (Array.isArray(arr)) throw new Error("не массив")
+    if (arr.some(el => isNaN(el))) throw new Error("в массиве не только числа")
+    if (arr.some(el => el < 0)) throw new Error("в массиве отрицательыне числа")
+    return true
+}
+
+function doNewArray(arr) {
+    try {
+        if (checkArr(arr)) {
+            const newArr = arr.filter(el => el >= 10 && el <= 100);
+            if (!newArr.length) throw new Error("все элемены не удовлетворяют условию")
+            return newArr
+        }
+    } catch (error) {
+        return error.massage
+    }
+}
+
+const randomArray = doArr(n)
+console.log(doNewArr(randomArray));
