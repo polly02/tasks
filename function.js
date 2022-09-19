@@ -868,6 +868,7 @@
 //     }
 // }
 
+
 // console.log(findLostElement(arr));
 
 // 9. Мальчик идет долгим путем со школы домой. Чтобы сделать прогулку веселее, он
@@ -927,3 +928,93 @@
 // }
 
 // console.log(checkEmail(email));
+
+//19.09
+
+// 1. На вход подается строка в виде числа. Необходимо написать регулярное
+// выражение. Если строка состоит только из чисел, то вывести булевое true, в
+// противном случае бросить исключение и обработать
+
+// const num = "123345s"
+
+// function checkStr(str) {
+//     try {
+//         if (!/^[\d]+$/g.test(str)) throw new Error("не числа")
+//         return true
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(checkStr(num));
+
+// 2. На вход подается строка вида “имя фамилия возраст”. Необходимо написать
+// регулярное выражение для данной строки. Если же строка подходит под
+// регулярное выражение, то вывести булевое true, в противном случае бросить
+// исключение и обработать
+
+// const str = "Polina Zdanovich 19"
+
+// function checkStr(str){
+//     try {
+//         if(!/^[a-zA-Z]+ [a-zA-Z]+ [\d]{1,2}$/g.test(str)) throw new Error("не подходит под RegEx")
+//         return true
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(checkStr(str));
+
+
+
+// 3. На вход подается строка из 2 и более слов. Необходимо все пробелы заменить на
+// “!”. Если же длина исходной строки изменилась, вывести true, в противном случае
+// бросить исключение и обработать
+
+// const str = "Polina Zdanovich student"
+
+// function checkStr(str){
+//     try {
+//         const change = str.replaceAll(/ /g, "!")
+//         if(change.includes(" ")) throw new Error("вы ничего не изменили")
+//         return change
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(checkStr(str));
+
+// 4. На вход подается строка в виде электронной почты пользователя. Необходимо
+// написать регулярное выражение для данной строки. Если же строка подходит
+// под регулярное выражение, то вывести булевое true, в противном случае бросить
+// исключение и обработать
+
+// const mail = "polina@gmail.com"
+
+// function checkEmail(email){
+//     try {
+//         if(!/^[a-zA-Z0-9_\-\.]+@[a-z]+\.[a-z]{1,3}$/g.test(email)) throw new Error("не подходит под формат почты")
+//         return email
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+// console.log(checkEmail(mail));
+
+// 5. На вход подается строка в виде url. Необходимо написать регулярное выражение
+// для данной строки. Если же строка подходит под регулярное выражение, то
+// вывести булевое true, в противном случае бросить исключение и обработать
+
+// const str = "https://github.com/Polina"
+
+// function checkURL(str){
+//     try {
+//         if(!/^(http|https):\/\/[a-zA-Z]+\.[a-z]{1,3}\/[\w]+$/g.test(str)) throw new Error ("error")
+//         return str
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+// console.log(checkURL(str));
