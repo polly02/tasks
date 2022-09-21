@@ -976,6 +976,7 @@
 // обработать
 // C:\Users\Admin\Desktop\test.txt -> true
 // C:/Users/Admin/Desktop/test.txt -> true
+
 //?
 // const road = "C:\Users\Admin\Desktop\test.txt";
 
@@ -1001,6 +1002,8 @@
 // • Специальные символы
 // • Длина не менее 8 символов
 
+//?
+
 // const pass = "abc_123" 
 
 // function checkPassword(pswrd) {
@@ -1018,3 +1021,64 @@
 // оставить в строке только буквенные символы используя регулярные выражения.
 // Если же длина исходной строки изменилась, вывести true, в противном случае
 // бросить исключение и обработать
+
+//???
+
+// const str = "123_as-D".split("");
+
+// function transformString(string) {
+//     try {
+//         const newStr = string.filter(el => /^[a-zA-Z]+&/g.test(el))
+//         if(str.length === newStr.length) throw new Error("в строке только буквы")
+//         else return true        
+//     } catch (error) {
+//         return error.message;
+//     }
+// }
+
+// console.log(transformString(str));
+
+// 9. Банкоматы позволяют использовать 4 или 6 значные PIN-коды, а PIN-коды не
+// могут содержать ничего, кроме ровно 4 или ровно 6 цифр. Необходимо написать
+// регулярное выражение для данной строки. Если же строка подходит под
+// регулярное выражение, то вывести булевое true, в противном случае бросить
+// исключение и обработать
+// "1234“ -> true
+// "12345“ -> false
+// "a234“ -> false
+
+//? если 5 цифр - undefined
+
+// const pin = 1236;
+
+// function checkPin(pin) {
+//     try {
+//         if (!/^[\d]{1,4}$|^[\d]{1,6}$/g.test(pin) || /^[\d]{1,5}$/g.test(pin)) throw new Error("неверная длина пинкода")
+//         return pin
+//     } catch (error) {
+//         return error.massage
+//     }
+// }
+
+// console.log(checkPin(pin));
+
+// 10. Неопытный Junior запушил в GitHub html файл с комментариями. Team Lead не
+// оценил использование комментариев в ветке development и попросил их убрать.
+// Вырезая куски кода вы поняли, что их чересчур много. Необходимо написать
+// регулярное выражение, которое вырежет все комментарии из html разметки
+// <!-- -->
+
+//?
+
+// const html = `<div>
+// <!-- asdcf -->
+// <input>
+// <!-- ad1 -->`
+
+// function editCommit(file) {
+//     let a = (/<!--[\w\.\*\(\)-_]+-->/g.exec(file))
+//     file.replaceAll(a, " ")
+//     return file
+// }
+
+// console.log(editCommit(html));
