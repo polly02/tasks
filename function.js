@@ -373,8 +373,7 @@
 // C:\Users\Admin\Desktop\test.txt -> true
 // C:/Users/Admin/Desktop/test.txt -> true
 
-//?
-// const road = "C:\Users\Admin\Desktop\test.txt";
+// const road = "C:\\Users\\Admin\\Desktop\\test.txt";
 
 // function checkRoad(road) {
 //     try {
@@ -400,7 +399,7 @@
 
 //?
 
-// const pass = "abc_123" 
+// const pass = "abc_1" 
 
 // function checkPassword(pswrd) {
 //     try {
@@ -478,3 +477,139 @@
 // }
 
 // console.log(editCommit(html));
+
+
+
+
+
+//22.09
+
+// 1. Реализуйте функцию, которая принимает динамичный массив и находит сумму
+// всех положительных чисел. Добавить проверки
+
+// const n = +prompt("enter")
+
+// function doArr(n) {
+//     const arr = []
+//     for (let i = 0; i < n; i++) {
+//         arr.push(+prompt(""))
+//     }
+//     return arr
+// }
+
+// function getSumma(arr) {
+//     const res = arr.reduce((sum, el) => {
+//         if (el > 0) {
+//             return sum + el
+//         } else {
+//             return sum + 0
+//         }
+//     }, 0)
+//     return res
+// }
+
+// const data = doArr(n);
+// console.log(getSumma(data));
+
+
+// 2. Реализайте функцию, которая принимает статичный массив и возвращает новый
+// массив с отфильтрованными значениями. Массив считается отфильтрованным,
+// если в нем присутствуют только числа
+// [ 1, 2, “a”, ”b” ] –> [ 1, 2 ]
+// [ 1, 2, “aasf”, “b”, “123”, 123 ] –> [ 1, 2, 123 ]
+
+// const arr = [ 1, 2, "aasf", 123];
+
+// function getFilterArr(arr) {
+//     return arr.filter(el => !isNaN(el))
+// }
+
+// console.log(getFilterArr(arr));
+
+
+// 3. Реализуйте функцию, которая принимает число и возвращает объект, где ключи –
+// каждый единичный символ числа, значение – четность / нечетность. Добавить
+// проверки
+// 542613 –> { 5: “неч”, 4: “чет”, 2: “чет”, 6: “чет”, 1: “неч”, 3: “неч” }
+
+// const arr = "542613".split("");
+
+// function checkArr(arr) {
+//     let bool = arr.some(el => isNaN(el) ? false : true)
+//     if (!bool) throw new Error("не только числа")
+//     return true
+// }
+
+// function getObj(newArr) {
+//     try {
+//         checkArr(arr)
+//         const obj = {}
+//         newArr.forEach(el => +el % 2 === 0 ? obj[+el] = "чет" : obj[+el] = "неч")
+//         return obj
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(getObj(arr));
+
+
+// 4. Реализайте функцию, которая принимает строку и определяет является ли слово
+// изограммой. Изограмма – это слово, в котором нет повторяющихся букв,
+// последовательных или непоследовательных
+// Dermatoglyphics –> true
+// aba –> false
+// moOse –> false
+
+// const str = "Dermatoglyphics".toLowerCase().split("").sort().join("");
+
+// function checkStr(str) {
+//     try {
+//         let flag = true;
+//         for (let i = 0; i < str.length; i++) {
+//             if (str[i] === str[i + 1]) {
+//                 flag = false;
+//                 break;
+//             }
+//         }
+//         if (!flag) throw new Error("error")
+//         return flag;
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(checkStr(str));
+
+
+
+// 5. Реализуйте функцию, демонстрирующую работу бинарного поиска
+
+// 9. Middleware – cвязующее программное обеспечение. Прежде чем запрос попадет
+// на сервер, запрос поступает в middleware, где находятся функции валидаторы.
+// Необходимо реализовать функцию валидатор, которая обрабатывает 2 поля:
+// почту, имя пользователя. Для проверки полей воспользуйтесь регулярными
+// выражениями. Middleware-функция возвращает true, если оба условия
+// отработали успешно и false в противном случае
+
+// const emale = "polina@gmail.com";
+// const name = "Polina";
+// const number = "+375(29)155-91-55"
+
+// function getValid (emale, name, number) {
+//     try {
+//         if(!/^[a-zA-Z0-9_\.]+$/g.test(name)) throw new Error("некорректное имя")
+//         if(!/^[a-zA-Z0-9_\.]+@[a-z]+\.[a-z]{1,3}$/g.test(emale)) throw new Error("некорректная запись почты")
+//         if(!/^\+[0-9]{1,3}\([0-9]{1,2}\)[0-9]{1,3}-[0-9]{1,2}-[0-9]{1,2}$/g.test(number)) throw new Error("некорректная запись")
+//         return true
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+// console.log(getValid(emale, name, number));
+
+
+const a = undefined || 10
+const b = "undefined" || 10
+const c = "" || 10
+console.log(a, b, c);
