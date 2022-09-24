@@ -397,14 +397,16 @@
 // • Специальные символы
 // • Длина не менее 8 символов
 
-//?
-
-// const pass = "abc_1" 
+// const pass = "abcABC_01" 
 
 // function checkPassword(pswrd) {
 //     try {
-//         if(!(/^[a-zA-Z0-9_\-\.@\/]+$/g.test(pswrd)) && pswrd.length >= 8) throw new Error ("ненадежный пароль")
-//         return pswrd
+//         if(!(/[a-z]+/g.test(pswrd))) throw new Error ("нет букв в нижнем регистре")
+//         if(!(/[A-Z]+/g.test(pswrd))) throw new Error ("нет букв в верхнем регистре")
+//         if(!(/[0-9]+/g.test(pswrd))) throw new Error ("нет цифр")
+//         if(!(/[-_\\\/\.]+/g.test(pswrd))) throw new Error ("нет специальных символов")
+//         if(pswrd.length < 8) throw new Error ("ненадежный пароль")
+//         return true
 //     } catch (error) {
 //         return error.message
 //     }
@@ -419,12 +421,13 @@
 
 //???
 
-// const str = "123_as-D".split("");
+// const str = "123_as-D";
 
 // function transformString(string) {
 //     try {
-//         const newStr = string.filter(el => /^[a-zA-Z]+&/g.test(el))
-//         if(str.length === newStr.length) throw new Error("в строке только буквы")
+//         const newStr = string.replace("0-9","")
+//         // const newStr = string.filter(el => /^[a-zA-Z]+&/g.test(el))
+//         if(string.length === newStr.length) throw new Error("в строке только буквы")
 //         else return true        
 //     } catch (error) {
 //         return error.message;
@@ -442,13 +445,14 @@
 // "12345“ -> false
 // "a234“ -> false
 
-//? если 5 цифр - undefined
+//? undefined
 
 // const pin = 1236;
 
 // function checkPin(pin) {
 //     try {
-//         if (!/^[\d]{1,4}$|^[\d]{1,6}$/g.test(pin) || /^[\d]{1,5}$/g.test(pin)) throw new Error("неверная длина пинкода")
+//         if (!/^[\d]{4}$/g.test(pin)) throw new Error("неверная длина пинкода")
+//         // if (!/^[\d]{6}$/g.test(pin)) throw new Error("неверная длина пинкода")
 //         return pin
 //     } catch (error) {
 //         return error.massage
@@ -609,7 +613,7 @@
 // console.log(getValid(emale, name, number));
 
 
-const a = undefined || 10
-const b = "undefined" || 10
-const c = "" || 10
-console.log(a, b, c);
+// const a = undefined || 10
+// const b = "undefined" || 10
+// const c = "" || 10
+// console.log(a, b, c);
