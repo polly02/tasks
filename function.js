@@ -425,7 +425,7 @@
 
 // function transformString(string) {
 //     try {
-//         const newStr = string.replace("0-9","")
+//         const newStr = string.replaceAll(/[0-9]+/g,"")
 //         // const newStr = string.filter(el => /^[a-zA-Z]+&/g.test(el))
 //         if(string.length === newStr.length) throw new Error("в строке только буквы")
 //         else return true        
@@ -447,15 +447,15 @@
 
 //? undefined
 
-// const pin = 1236;
+// const pin = 123645;
 
 // function checkPin(pin) {
 //     try {
-//         if (!/^[\d]{4}$/g.test(pin)) throw new Error("неверная длина пинкода")
-//         // if (!/^[\d]{6}$/g.test(pin)) throw new Error("неверная длина пинкода")
+//         // if (!(/^[\d]+$/g.test(pin) && (String(pin).length === 4||String(pin).length === 6))) throw new Error("неверная длина пинкода")
+//         if (!/^([\d]{4}$|[\d]{6}$)/g.test(pin)) throw new Error("error")
 //         return pin
 //     } catch (error) {
-//         return error.massage
+//         return error.message
 //     }
 // }
 
@@ -475,9 +475,9 @@
 // <!-- ad1 -->`
 
 // function editCommit(file) {
-//     let a = (/<!--[\w\.\*\(\)-_]+-->/g.exec(file))
-//     file.replaceAll(a, " ")
-//     return file
+//     let a = /<!--[\w\.\*\(\)-_! ]+-->/g
+//     let n = file.replaceAll(a, "")
+//     return n
 // }
 
 // console.log(editCommit(html));
