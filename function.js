@@ -636,7 +636,19 @@
 // test –> es
 // testing –> t
 
+// const str = "trtt"
 
+// function findMiddle(str) {
+//     if (str.length % 2 === 0) {
+//         let n = str.length % 2
+//         return `${str[n + 1]}${str[n + 2]}`
+//     } else {
+//         let n = str.length % 2 + 1
+//         return str[n]
+//     }
+// }
+
+// console.log(findMiddle(str));
 
 // 8. Реализуйте функцию, принимающую число. Ваша задача – выяснить является ли
 // число идеальным квадратом. В математике квадратное число или идеальный
@@ -647,6 +659,20 @@
 // 25 –> true
 // 49 –> true
 
+// let n = -24
+
+// function getSqrt(n) {
+//     try {
+//         if(n<=0) throw new Error("отрицательное число не имеет корней")
+//         const sqrt = Math.sqrt(n)
+//         if (sqrt % 1 === 0) return true
+//         else return false
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+
+// console.log(getSqrt(n));
 
 // 9. Middleware – cвязующее программное обеспечение. Прежде чем запрос попадет
 // на сервер, запрос поступает в middleware, где находятся функции валидаторы.
