@@ -697,6 +697,59 @@
 // }
 // console.log(getValid(emale, name, number));
 
+// 10. Реализуйте функцию, которая принимает строку из 2 повторяющихся символов.
+// Необходимо проверить, содержит ли строка одинаковое количество символов.
+// Функция возвращает true, если строка содержит одинаковое количество
+// символов и false в противном случае. Добавить проверки
+// ooxx –> true
+// xooxx –> false
+// ooxXm –> ИСКЛЮЧЕНИЕ (3 символа)
+
+// const str = "xooxX".toLowerCase();
+
+// function checkStr(str) {
+//     try {
+//         const arr = [];
+//         for (let i = 0; i < str.length; i++) {
+//             if (!arr.includes(str[i])) arr.push(str[i])
+//         }
+
+//         if (arr.length > 2 || arr.length < 2) throw new Error("неподходящее количество символов")
+//         else {
+//             let countA = 0
+//             let countB = 0
+//             for (let i = 0; i < str.length; i++) {
+//                 if (str[i] === arr[0]) countA++
+//                 if (str[i] === arr[1]) countB++
+//             }
+//             if (countA === countB) return true
+//             else return false
+//         }
+//     } catch (error) {
+//         return error.message
+//     }
+// }
+// console.log(checkStr(str));
+
+// 11. Реализуйте функцию, принимающую 2 строки и возвращающую, true, если часть
+// одной строки можно переставить так, чтобы она соответствовала 2 строке, и false в
+// противном случае, если совпадений нет
+// “rkqodlw”, “world” –> true (rkqodlw содержит world)
+// “katas”, “steak” –> false (katas не включает steak после перестановки символов)
+
+// const str = "rkqodlw"
+// const str2 = "world"
+
+// function checkWords(str1, str2) {
+//     let count = 0
+//     for (let i = 0; i < str2.length; i++) {
+//         if (str1.includes(str2[i])) count++
+//     }
+//     if (str2.length === count) return true
+//     else return false
+// }
+// console.log(checkWords(str, str2));
+
 
 // const a = undefined || 10
 // const b = "undefined" || 10
@@ -706,7 +759,7 @@
 
 
 
-
+//KR
 
 // function multi(){
 //     let num = 0
@@ -735,8 +788,8 @@
 
 
 
-// Неопытный Junior запушил в GitHub html файл с комментариями. Team Lead не оценил использование комментариев 
-// в ветке development и попросил их убрать. Вырезая куски кода вы поняли, что их чересчур много. 
+// Неопытный Junior запушил в GitHub html файл с комментариями. Team Lead не оценил использование комментариев
+// в ветке development и попросил их убрать. Вырезая куски кода вы поняли, что их чересчур много.
 // Необходимо написать регулярное выражение, которое вырежет все комментарии из html разметки
 // <!--  -->
 // *
@@ -755,19 +808,19 @@
 // console.log(deleteComments(html));
 
 
-// Напишите функцию, принимающую в качестве параметра статичный объект. Функция возвращает количество 
+// Напишите функцию, принимающую в качестве параметра статичный объект. Функция возвращает количество
 // пар ключ / значение этого объекта. Использовать IIFE
 
 
-(function () {
-    const obj = {
-        1: "a",
-        2: "b",
-        3: "c"
-    }
-    let count = 0
-    for (let key in obj) {
-        if (key) count++
-    }
-    console.log(count);
-})()
+// (function () {
+//     const obj = {
+//         1: "a",
+//         2: "b",
+//         3: "c"
+//     }
+//     let count = 0
+//     for (let key in obj) {
+//         if (key) count++
+//     }
+//     console.log(count);
+// })()
