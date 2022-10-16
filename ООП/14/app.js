@@ -1,27 +1,27 @@
-// 7. Реализуйте класс ServerById. Обязательными функциями считаются функции
-// middleware, controller, service, repository. Цепочка взаимодействия между
-// методами следующая:
+// 14. Реализуйте класс ServerPut. Обязательными функциями считаются функции
+// middleware, controller, service, repository. Цепочка взаимодействия между методами
+// следующая:
 // middleware -> controller -> service -> repository, где:
 // middleware – функция валидатор
 // controller – функция, принимающая данные. Принимает json
 // service – функция проверки на то что с repository вернулось значение
-// repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие
-// с этим массивом осуществляется только в repository. Массив находится в
-// приложении
+// repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
+// этим массивом осуществляется только в repository. Массив находится в приложении
 // Задание:
 // на вход подается JSON вида:
 // `{
-// "id": "javascript"
+// "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1
 // }`
-// Необходимо вывести в консоль найденный элемент массива по id если таковой
-// имеется. В противном случае бросить исключение. Добавить проверки 
+// Необходимо найти id клиента в массиве БД. Если совпадение есть, произвести
+// обновление значений для соответствующих ключей.
+// Если совпадения по id нет – ошибка. Добавить проверки 
 
-class ServerById {
-    middleware(parseData) {
+class ServerPut{
+    middleware(parseData){
         if(!typeof parseData.id === "string") throw new Error("id isn't string")
     }
 
-    controller(obj) { //главная функция
+    controller(obj){
         try {
             const parsedData = JSON.parse(obj)
             this.middleware(parsedData)
@@ -31,14 +31,14 @@ class ServerById {
             return error.message
         }
     }
-
-    service(parseData) {
+    
+    service(parseData){
         const gotData = this.repository(parseData)
         if (!gotData.length) throw new Error("array is empty")
         return gotData
     }
 
-    repository(parseDataClient) {
+    repository(parseDataClient){
         const arr = `[{ "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
                  { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
                  { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
@@ -51,6 +51,5 @@ class ServerById {
     }
 }
 
-const serverById = new ServerById()
-// console.log(serverById.controller(`{"id": "javascript"}`)); // результат
-console.log(serverById.controller(`{"id": "test"}`)); //пустой
+const serverPut = new ServerPut()
+console.log(serverPut.controller(`{"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1}`));

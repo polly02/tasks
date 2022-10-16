@@ -28,13 +28,6 @@ class ServerPost {
             const parseData = JSON.parse(obj)
             this.middleware(parseData)
             const gotData = this.service(parseData)
-            for(let i = 0; i<gotData.length; i++){
-                if(gotData[i][label] === "Javascript") {
-                    return false
-                } else {
-                    gotData.push(parseData)
-                }
-            }
             return gotData
         } catch (error) {
             return error.message
@@ -43,8 +36,9 @@ class ServerPost {
 
     service(parseData) {
         const gotData = this.repository(parseData)
-        if (!gotData.length) throw new Error("array is empty")
-        return gotData
+        if (gotData.length) throw new Error("array has this element")
+        const resData = gotData.push(parseData)
+        return resData
     }
 
     repository(parseDataClient) {
@@ -55,18 +49,10 @@ class ServerPost {
                  { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }]`
 
         const parseDB = JSON.parse(arr)
-        return parseDB
-        
-        // for(let i = 0; i<parseDB.length; i++){
-        //     if(parseDB[i][label] === "Javascript") {
-        //         return false
-        //     } else {
-        //         parseDB.push()
-        //     }
-
-        // }
+        const found = parseDB.filter(el => el.label === parseDataClient.label)
+        return found
     }
 }
 
 const serverPost = new ServerPost()
-console.log(serverPost.controller(`{"id": "javascript", "label": "javaScript", "category": "programmingLanguages", "priority": 1}`));
+console.log(serverPost.controller(`{"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1}`));
