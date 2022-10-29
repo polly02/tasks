@@ -1,7 +1,15 @@
+class Anagrama{
+constructor(){
+    this.check()
+}
 
-// 2. По условию задачи даны инпут и кнопка. Пользователь вводит в инпут значения и
-// по нажатию на кнопку формирует массив. Необходимо вывести среднее
-// значение этого массива
-// 3. По условию задачи даны инпут и кнопка. Пользователь вводит в инпут значения и
-// по нажатию на кнопку формирует массив строк. Необходимо вывести: полный
-// массив из всех элементов, а также массив из уникальных значений
+check(){
+    document.querySelector(".btn").addEventListener("click", () => {
+        let inp1 = document.querySelector(".input1").value.trim()
+        let inp2 = document.querySelector(".input2").value.trim()
+        document.querySelector(".res").innerHTML = inp1.split("").sort().join("") === inp2.split("").sort().join("") ? true : false
+        })
+}
+}
+
+const anagrama = new Anagrama()
