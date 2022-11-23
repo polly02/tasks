@@ -27,6 +27,21 @@ class Client {
             }
         })
     }
+
+    doAuth() {
+        document.querySelector(".btn-auth").addEventListener("click", () => {
+            try {
+                const email = document.querySelector(".email-auth")
+                const password = document.querySelector(".pwd-auth")
+                this.isEmpty(email, password)
+                const server = new Server2()
+                const dataServer = server.controller({ email, password })
+                alert(dataServer)
+            } catch (error) {
+                alert(error.message)
+            }
+        })
+    }
 }
 const client = new Client()
 
@@ -67,5 +82,42 @@ class Server {
             return true
         }
         return false
+    }
+}
+
+class Server2 {
+    middleware(obj) {
+        if (!/^[\w\d_\.]+@[a-z]+\.[a-z]{2,5}$/g.test(obj.email)) throw new Error("incorrect email")
+    }
+
+    controller(obj) {
+        try {
+            this.middleware(obj)
+            const bool = this.service(obj)
+            return bool
+        } catch (error) {
+            return error.message
+            // console.log(error.message)
+            // throw new Error(error.message)
+        }
+    }
+
+    service(obj) {
+        const bool = this.repository(obj)
+        if (!bool) throw new Error("совпадений нет")
+        return bool
+    }
+
+    repository(obj) {
+        const DB = [
+            { "id": 1, "email": "yesenia@mail.ru", "pwd": "pwd12345678" },
+            { "id": 2, "email": "hanna@mail.ru", "pwd": "pwd123123" },
+            { "id": 3, "email": "stanislau@mail.ru", "pwd": "pwdtest444" },
+            { "id": 4, "email": "german@mail.ru", "pwd": "pwdqqq111" },
+            { "id": 5, "email": "maria@mail.ru", "pwd": "pwd746552" }
+        ]
+
+        let res = DB.some(el => el.email === obj.email && el.pwd === obj.password)
+        return res ? true : false
     }
 }
