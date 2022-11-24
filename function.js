@@ -77,3 +77,67 @@
 
 
 
+// 24-11
+
+// 1. Посчитать количество гласных и согласных в строке
+
+// const str = "I am study at Hschool".toLowerCase()
+// const arrA = ['a', 'e', 'y', 'u', 'i','o']
+// const arrB = ['q', 'w', 'r', 't', 'p', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
+// let countA = 0;
+// let countB = 0;
+
+// for(let i = 0; i < str.length; i++){
+//  if(arrA.includes(str[i])){
+//     countA ++
+//  } else if(arrB.includes(str[i])){
+//     countB ++
+//  }
+// }
+
+// console.log(`Количество гласных ${countA}, количество согласных ${countB}`);
+
+
+// 2. Вы вводите числа в поле для ввода формируя массив.
+// Необходимо отобразить массив, а также отдельно
+// все четные элементы этого массива и нечетные
+// const arr = []
+// const arrCh = []
+// const arrN = []
+
+// document.querySelector(".btn-num").addEventListener("click", () => {
+//     const inp = document.querySelector(".number").value
+//     arr.push(inp)
+//     if (inp % 2 === 0) {
+//         arrCh.push(inp)
+//     } else {
+//         arrN.push(inp)
+//     }
+//     document.querySelector(".res").innerHTML = `${arr} ${arrCh} ${arrN}`
+// })
+
+// 3. Вы вводите числа в поле для ввода формируя и отображая массив.
+// Необходимо также отображать только уникальные значения массива
+// [1, 1, 4, 2, 3, 3] -> [4, 2]
+
+// const arr = []
+// const arrUnique = []
+
+// document.querySelector(".btn-num").addEventListener("click", () => {
+//     const inp = document.querySelector(".number").value
+//     arr.push(inp)
+//     arr.sort()
+//     for (let i = 0; i < arr.length; i++) {
+//         if(arr[i] !== arr[i-1] && arr[i] !== arr[i+1]) {
+//             arrUnique.push(arr[i])
+//         } else{
+//             continue
+//         }
+//     }
+//     document.querySelector(".res").innerHTML = `${arr} ${arrUnique}`
+// })
+
+
+// 4. Вы вводите строку. Неоходимо проверить является ли эта строка датой и
+// соответствует шаблону вида хх-хх-хххх
+// 5. У вас есть 3 инпута. Необходимо вывести в результат конкатенацию всех инпутов
