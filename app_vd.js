@@ -32,17 +32,16 @@
 // console.log(obj);
 
 
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+const str = "deg";
+const first = alphabet.indexOf(str[0]);
+let strIndex = 0;
 
-// const alphabet = "abcdefghijklmnopqrstuvwxyz";
-// const str = "deg";
-// const first = alphabet.indexOf(str[0]);
-// let strIndex = 0;
-
-// for(let i = first; i < alphabet.length; i++) {
-//     if(str[strIndex] === alphabet[i]) {
-//         strIndex++
-//     } else {
-//         console.log(alphabet[i]);
-//         break
-//     }
-// }
+for(let i = first; i < alphabet.length; i++) {
+    if(str[strIndex] === alphabet[i]) {
+        strIndex++
+    } else {
+        console.log(alphabet[i]);
+        break
+    }
+}
