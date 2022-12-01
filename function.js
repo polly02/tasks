@@ -1,5 +1,7 @@
 //18.09 - errors
 
+const { arrayBuffer } = require("stream/consumers")
+
 // 3. Дан массив чисел внутри строки. Необходимо строку преобразовать в массив
 // используя JSON.parse. Если же после того как вы спарсили данные у вас не
 // массив, то бросить исключение. Добавить проверку на числа. Далее вывести
@@ -141,3 +143,40 @@
 // 4. Вы вводите строку. Неоходимо проверить является ли эта строка датой и
 // соответствует шаблону вида хх-хх-хххх
 // 5. У вас есть 3 инпута. Необходимо вывести в результат конкатенацию всех инпутов
+
+
+
+const storage = [
+    {
+        id: 1,
+        title: 'часы',
+        price: 333,
+        count: 3
+    },
+    {
+        id: 2,
+        title: 'смартфон',
+        price: 33,
+        count: 3
+    },
+    {
+        id: 3,
+        title: 'тв',
+        price: 353,
+        count: 1
+    },
+]
+
+
+const arr = []
+for (let i = 0; i < storage.length; i++) {
+    const { id, title, price, count } = storage[i]
+    arr.push(price * count)
+}
+
+let res = arr.reduce(function (el, sum) {
+    return sum + el
+}, 0)
+
+console.log(res);
+// price  count + price2  count2 + ...
