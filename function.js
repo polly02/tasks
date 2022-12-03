@@ -161,7 +161,6 @@ const storage = [
     },
 ]
 
-
 const arr = []
 for (let i = 0; i < storage.length; i++) {
     const { id, title, price, count } = storage[i]
