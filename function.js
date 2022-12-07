@@ -142,36 +142,47 @@ const { arrayBuffer } = require("stream/consumers")
 
 
 
-const storage = [
-    {
-        id: 1,
-        title: 'часы',
-        price: 333,
-        count: 3
-    },
-    {
-        id: 2,
-        title: 'смартфон',
-        price: 33,
-        count: 3
-    },
-    {
-        id: 3,
-        title: 'тв',
-        price: 353,
-        count: 1
-    },
-]
+// const storage = [
+//     {
+//         id: 1,
+//         title: 'часы',
+//         price: 333,
+//         count: 3
+//     },
+//     {
+//         id: 2,
+//         title: 'смартфон',
+//         price: 33,
+//         count: 3
+//     },
+//     {
+//         id: 3,
+//         title: 'тв',
+//         price: 353,
+//         count: 1
+//     },
+// ]
 
-const arr = []
-for (let i = 0; i < storage.length; i++) {
-    const { id, title, price, count } = storage[i]
-    arr.push(price * count)
-}
+// const arr = []
+// for (let i = 0; i < storage.length; i++) {
+//     const { id, title, price, count } = storage[i]
+//     arr.push(price * count)
+// }
 
-let res = arr.reduce(function (el, sum) {
-    return sum + el
-}, 0)
+// let res = arr.reduce(function (el, sum) {
+//     return sum + el
+// }, 0)
 
-console.log(res);
+// console.log(res);
 // price  count + price2  count2 + ...
+
+
+
+const obj = [1, 2, 3, 4, 1, 2, 3, 4, 5, 11, 2, 2, 3].reduce((acc, el) => {
+    if(acc[el]) {
+        acc[el] += 1;
+    } else {
+        acc[el] = 1;
+    }
+    return acc
+}, {})
