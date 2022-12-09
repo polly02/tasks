@@ -178,11 +178,21 @@ const { arrayBuffer } = require("stream/consumers")
 
 
 
-const obj = [1, 2, 3, 4, 1, 2, 3, 4, 5, 11, 2, 2, 3].reduce((acc, el) => {
-    if(acc[el]) {
-        acc[el] += 1;
-    } else {
-        acc[el] = 1;
+// const obj = [1, 2, 3, 4, 1, 2, 3, 4, 5, 11, 2, 2, 3].reduce((acc, el) => {
+//     if (acc[el]) {
+//         acc[el] += 1;
+//     } else {
+//         acc[el] = 1;
+//     }
+//     return acc
+// }, {})
+
+
+function sum() {
+    let sum = 0
+    return function(){
+        return ++sum
     }
-    return acc
-}, {})
+}
+const wrapper = sum()
+console.log(wrapper());
