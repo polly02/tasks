@@ -177,7 +177,6 @@ const { arrayBuffer } = require("stream/consumers")
 // price  count + price2  count2 + ...
 
 
-
 // const obj = [1, 2, 3, 4, 1, 2, 3, 4, 5, 11, 2, 2, 3].reduce((acc, el) => {
 //     if (acc[el]) {
 //         acc[el] += 1;
@@ -188,11 +187,23 @@ const { arrayBuffer } = require("stream/consumers")
 // }, {})
 
 
-function sum() {
-    let sum = 0
-    return function(){
-        return ++sum
+// function sum() {
+//     let sum = 0
+//     return function(){
+//         return ++sum
+//     }
+// }
+
+// const wrapper = sum()
+// console.log(wrapper());
+
+
+class Sum{
+    sum = 0
+    count(){
+        this.sum++
+        return this.sum
     }
 }
-const wrapper = sum()
-console.log(wrapper());
+const sum = new Sum()
+console.log(sum.count()); 
