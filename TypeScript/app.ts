@@ -1,14 +1,14 @@
 // 1. У вас есть массив объектов вида приведенного в приложении. Необходимо
 // вывести все товары, количество которых больше 10
 
-// interface Obj {
+// interface iObj {
 //     id?: number;
 //     title: string;
 //     count: number;
 //     price: number;
 // }
 
-// const array: Obj[] = [
+// const array: iObj[] = [
 //     { id: 1, title: 'Часы', count: 10, price: 500 },
 //     { id: 2, title: 'Смартфон', count: 33, price: 1500 },
 //     { id: 3, title: 'Моноблок', count: 6, price: 2200 },
@@ -16,7 +16,7 @@
 //     { id: 5, title: 'Планшет', count: 22, price: 2100 },
 // ]
 
-// function filter(array: Obj[]): Obj[] {
+// function filter(array: iObj[]): iObj[] {
 //     const filtered = array.filter((elem) => elem.count > 10)
 //     return filtered
 // }
@@ -26,14 +26,14 @@
 // 2. У вас есть массив объектов вида приведенного в приложении. Необходимо
 // вывести все товары в обратном порядке
 
-// interface Obj {
+// interface iObj {
 //     id?: number;
 //     title: string;
 //     count: number;
 //     price: number;
 // }
 
-// const array: Obj[] = [
+// const array: iObj[] = [
 //     { id: 1, title: 'Часы', count: 10, price: 500 },
 //     { id: 2, title: 'Смартфон', count: 33, price: 1500 },
 //     { id: 3, title: 'Моноблок', count: 6, price: 2200 },
@@ -41,7 +41,7 @@
 //     { id: 5, title: 'Планшет', count: 22, price: 2100 },
 // ]
 
-// function revers(array: Obj[]): Obj[] {
+// function revers(array: iObj[]): iObj[] {
 //     const result = array.reverse()
 //     return result
 // }
@@ -51,14 +51,14 @@
 // 3. У вас есть массив объектов вида приведенного в приложении. Необходимо
 // вывести только те товары, количество которых внутри массива кратно 3
 
-// interface Product {
+// interface iProduct {
 //     id: number;
 //     title: string;
 //     count: number;
 //     price: number;
 // }
 
-// const array: Product[] =
+// const array: iProduct[] =
 //     [
 //         { id: 1, title: 'Часы', count: 10, price: 500 },
 //         { id: 2, title: 'Смартфон', count: 33, price: 1500 },
@@ -67,7 +67,7 @@
 //         { id: 5, title: 'Планшет', count: 22, price: 2100 },
 //     ]
 
-// function filter(array: Product[]): Product[] {
+// function filter(array: iProduct[]): iProduct[] {
 //     const filtered = array.filter((elem) => elem.count % 3 === 0)
 //     return filtered
 // }
@@ -77,14 +77,14 @@
 // вывести итоговую стоимость на складе.
 // Итоговая стоимость = количество * цена + ...
 
-// interface Product {
+// interface iProduct {
 //     id: number;
 //     title: string;
 //     count: number;
 //     price: number;
 // }
 
-// const array: Product[] =
+// const array: iProduct[] =
 //     [
 //         { id: 1, title: 'Часы', count: 10, price: 500 },
 //         { id: 2, title: 'Смартфон', count: 33, price: 1500 },
@@ -93,7 +93,7 @@
 //         { id: 5, title: 'Планшет', count: 22, price: 2100 },
 //     ]
 
-// function reduce(array: Product[]): number {
+// function reduce(array: iProduct[]): number {
 //     const res = array.reduce((sum, elem) => {
 //         return sum + elem.count * elem.price
 //     }, 0)
@@ -105,14 +105,14 @@
 // 5. У вас есть массив объектов вида приведенного в приложении. Необходимо
 // вывести товар с максимальным прайсом
 
-// interface Product {
+// interface iProduct {
 //     id: number;
 //     title: string;
 //     count: number;
 //     price: number;
 // }
 
-// const array: Product[] =
+// const array: iProduct[] =
 //     [
 //         { id: 1, title: 'Часы', count: 10, price: 500 },
 //         { id: 2, title: 'Смартфон', count: 33, price: 1500 },
@@ -121,7 +121,7 @@
 //         { id: 5, title: 'Планшет', count: 22, price: 2100 },
 //     ]
 
-// function getMaxPrice(array: Product[]): number {
+// function getMaxPrice(array: iProduct[]): number {
 //     let max = 0
 //     for (let i = 0; i < array.length; i++) {
 //         array[i].price > max ? max = array[i].price : null
@@ -134,14 +134,14 @@
 // 6. У вас есть массив объектов вида приведенного в приложении. Необходимо
 // вывести средний прайс среди всех продуктов
 
-// interface Product {
+// interface iProduct {
 //     id: number;
 //     title: string;
 //     count: number;
 //     price: number;
 // }
 
-// const array: Product[] =
+// const array: iProduct[] =
 //     [
 //         { id: 1, title: 'Часы', count: 10, price: 500 },
 //         { id: 2, title: 'Смартфон', count: 33, price: 1500 },
@@ -150,7 +150,7 @@
 //         { id: 5, title: 'Планшет', count: 22, price: 2100 },
 //     ]
 
-// function getAveragePrice(array: Product[]): number {
+// function getAveragePrice(array: iProduct[]): number {
 //     const summa = array.reduce((sum, elem) => sum + elem.price, 0)
 //     return summa/array.length
 // }
@@ -160,14 +160,14 @@
 // 7. У вас есть массив объектов вида приведенного в приложении. Необходимо
 // вывести тот товар, где количество * прайс является наибольшим значением
 
-// interface Product {
+// interface iProduct {
 //     id: number;
 //     title: string;
 //     count: number;
 //     price: number;
 // }
 
-// const array: Product[] =
+// const array: iProduct[] =
 //     [
 //         { id: 1, title: 'Часы', count: 10, price: 500 },
 //         { id: 2, title: 'Смартфон', count: 33, price: 1500 },
@@ -176,7 +176,7 @@
 //         { id: 5, title: 'Планшет', count: 22, price: 2100 },
 //     ]
 
-// function maxCost(array: Product[]): number {
+// function maxCost(array: iProduct[]): number {
 //     let max = 0
 //     for (let i = 0; i < array.length; i++) {
 //         let prod = array[i].count * array[i].price
@@ -219,35 +219,83 @@
 // 9. У вас есть массив объектов вида приведенного в приложении. Необходимо
 // посчитать количество вызовов функции, которая находит минимальный прайс
 
-interface Product {
-    id: number;
-    title: string;
-    count: number;
-    price: number;
-}
+// interface iProduct {
+//     id: number;
+//     title: string;
+//     count: number;
+//     price: number;
+// }
 
-const array: Product[] =
-    [
-        { id: 1, title: 'Часы', count: 10, price: 500 },
-        { id: 2, title: 'Смартфон', count: 33, price: 1500 },
-        { id: 3, title: 'Моноблок', count: 6, price: 2200 },
-        { id: 4, title: 'Ноутбук', count: 13, price: 3000 },
-        { id: 5, title: 'Планшет', count: 22, price: 2100 },
-    ]
+// const array: iProduct[] =
+//     [
+//         { id: 1, title: 'Часы', count: 10, price: 500 },
+//         { id: 2, title: 'Смартфон', count: 33, price: 1500 },
+//         { id: 3, title: 'Моноблок', count: 6, price: 2200 },
+//         { id: 4, title: 'Ноутбук', count: 13, price: 3000 },
+//         { id: 5, title: 'Планшет', count: 22, price: 2100 },
+//     ]
 
-function wrapper(array: Product[]) {
-    let count = 0
-    let min = array[0].price
-    return function (elem: Product) {
-        count++
-        console.log(`количество : ${count}`);
-        elem.price < min ? min = elem.price : null
-        console.log(`мин цена: ${min}`);
+// function wrapper(array: iProduct[]) {
+//     let count = 0
+//     let min = array[0].price
+//     return function (elem: iProduct) {
+//         count++
+//         console.log(`количество : ${count}`);
+//         elem.price < min ? min = elem.price : null
+//         console.log(`мин цена: ${min}`);
 
-    }
-}
-const wrap = wrapper(array)
+//     }
+// }
+// const wrap = wrapper(array)
 
-for (let i = 0; i < array.length; i++) {
-    wrap(array[i])
-}
+// for (let i = 0; i < array.length; i++) {
+//     wrap(array[i])
+// }
+
+// 10. У вас есть массив объектов вида приведенного в приложении. Пользователь
+// вводит значение id: например, 1. Необходимо отобразить в консоль найденный
+// объект используя алгоритм бинарного поиска.
+
+// interface iProduct {
+//     id: number;
+//     title: string;
+//     count: number;
+//     price: number;
+// }
+
+// const array: iProduct[] =
+//     [
+//         { id: 1, title: 'Часы', count: 10, price: 500 },
+//         { id: 2, title: 'Смартфон', count: 33, price: 1500 },
+//         { id: 3, title: 'Моноблок', count: 6, price: 2200 },
+//         { id: 4, title: 'Ноутбук', count: 13, price: 3000 },
+//         { id: 5, title: 'Планшет', count: 22, price: 2100 },
+//     ]
+
+// function getObject(array: iProduct[]): object {
+
+// }
+
+
+
+
+// 11. У вас есть массив строковых значений. Необходимо вывести количество
+// дубликатов в массиве:
+// [1, 2, 1, 2, 3, 4, 5, 1] -> 3
+
+//                ОШИБКА в npx tsc app
+
+// const array: string[] = ["aaa", "bbb", "aaa", "bbb", "ccc", "ddd", "aaa"]
+
+// function countDublicate(array: string[]): number {
+//     const newArr: [] = []
+//     for (let i = 0; i < array.length; i++) {
+//         if (newArr.indexOf(array[i]) === -1) {
+//             newArr.push(array[i])
+//         }
+//     }
+//     return array.length - newArr.length
+// }
+
+// console.log(countDublicate(array));
+
