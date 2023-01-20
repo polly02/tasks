@@ -429,6 +429,7 @@
 
 // console.log(transform(arr));
 
+//17.
 
 // 18. Дан массив с объектами даты. Необходимо отсортировать по датам.
 
@@ -458,4 +459,3 @@ function sort(arr: iDate[]): iDate[] {
     return arr
 }
 console.log(sort(arr));
-
