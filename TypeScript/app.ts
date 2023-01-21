@@ -446,13 +446,12 @@ const arr: iDate[] = [
 function sort(arr: iDate[]): iDate[] {
     for (let j = arr.length - 1; j > 0; j--) {
         for (let i = 0; i < j; i++) {
-
             let day = arr[i].date.replaceAll(".", "").split(" ")
-            let day2 = arr[i+1].date.replaceAll(".", "").split(" ")
-            if (day[0] > day2[0] ) {
+            let day2 = arr[i + 1].date.replaceAll(".", "").split(" ")
+            if (day[0] > day2[0]) {
                 let middle = arr[i].date
-                arr[i].date = arr[i+1].date
-                arr[i+1].date = middle
+                arr[i].date = arr[i + 1].date
+                arr[i + 1].date = middle
             }
         }
     }
