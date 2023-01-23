@@ -181,25 +181,156 @@
 //     проверки.
 //     Написать тест для функции
 
-function findCount(obj) {
-    if(Object.keys(obj).length == 0) return false 
-    let count = 0
-    for (let key in obj) {
-        if (!isNaN(obj[key])) {
-            count++
+// function findCount(obj) {
+//     if(Object.keys(obj).length == 0) return false 
+//     let count = 0
+//     for (let key in obj) {
+//         if (!isNaN(obj[key])) {
+//             count++
+//         }
+//     }
+//     return count
+// }
+
+// describe("test findCount", () => {
+//     const obj = {1: 1, 2: 2, 3: "tfjgbs" }
+//     test("return count", ()=>{
+//         const res = findCount(obj)
+//         expect(res).toBe(2)
+//     })
+//     test("return false", ()=>{
+//         const res = findCount({})
+//         expect(res).toBeFalsy()
+//     })
+// })
+
+// 7. На входе статичный объект. Необходимо числовые значения удвоить на выходе.
+// Написать тест для функции
+
+// function getDoubleValue(obj) {
+//     if(Object.keys(obj).length == 0) return false  
+//     for (const key in obj) {
+//         if (!isNaN(obj[key])) {
+//             obj[key] * 2
+//         }
+//     }
+//     return obj
+// }
+
+// describe("test getDoubleValue", () => {
+//     const obj = { 1: 1, 2: 2}
+//     test("returned obj", () => {
+//         const res = getDoubleValue(obj)
+//         expect(res).toEqual({ 1: 2, 2: 4})
+//     })
+//     test("returned false", ()=>{
+//         const res = getDoubleValue({})
+//         expect(res).toBeFalsy()
+//     })
+// })
+
+
+// 8. На входе статичный объект. Необходимо сформировать массив из всх четных
+// значений объекта.
+// Написать тест для функции
+
+// function doArr(obj) {
+//     const arr = []
+//     if(Object.keys(obj).length === 0) return false
+//     for (const key in obj) {
+//         if (!isNaN(obj[key]) && obj[key] % 2 === 0){
+//             arr.push(obj[key])
+//         }
+//     }
+//     return arr
+// }
+
+// describe("test doArr", ()=>{
+//     const obj = { 1: 1, 2: 2, 3:"a", 4:4}
+//     test("returned array", ()=>{
+//         const res = doArr(obj)
+//         expect(res).toEqual([2, 4])
+//     })
+//     test("returned false", ()=>{
+//         const res = doArr({})
+//         expect(res).toBeFalsy()
+// })
+// })
+
+// 9. На входе статичный массив [1, 2, 3, 4, 5, 6] и динамическое значение n. Необходимо
+// разбить данный одномерный массив на маленькие массивы в зависимости от
+// того, какого число ввел пользователь. Добавить необходимые проверки.
+// 1 -> [[1], [2], [3], [4], [5], [6]]
+// 2 -> [[1, 2], [3, 4], [5, 6]]
+// 3 -> [[1, 2, 3], [4, 5, 6]]
+// 4 -> [[1, 2, 3, 4], [5, 6]
+// 5 -> [[1, 2, 3, 4, 5], [6]]
+// 6 -> [[1, 2, 3, 4, 5, 6]]
+// Написать тест для функции
+
+// 11. На входе число. Необходимо перевести число в двоичную систему счисления.
+// Добавить необходимые проверки.
+// Написать тест для функции
+
+// function conversionToBinary(n){
+//     if(!n) return false
+//     if(isNaN(n)) return false
+//     let res = n.toString(2);
+//     return res
+// }
+
+// // parseInt("1111", 2); //из двоичной в десятичную
+
+// describe("test conversionToBinary", ()=>{
+//     test("returned number(string)", ()=>{
+//         const res = conversionToBinary(41)
+//         expect(res).toBe("101001")
+//     })
+//     test("returned false", ()=>{
+//         const res = conversionToBinary("fff")
+//         expect(res).toBeFalsy()
+//     })
+//     test("returned false", ()=>{
+//         const res = conversionToBinary()
+//         expect(res).toBeFalsy()
+//     })
+// })
+
+// 12. Реализуйте функцию, которая принимает в качестве параметра строку и
+// возвращает список элементов без каких-либо элементов с одинаковым
+// значением рядом друг с другом.
+// Написать тест для функции
+// 'AAAABBBCCDAABBB -> ['A', 'B', 'C', 'D', 'A', 'B’]
+// 'ABBCcAD’ -> ['A', 'B', 'C', 'c', 'A', 'D’]
+// '12233’ -> [1, 2, 3]
+// Написать тест для функции
+
+function getUniqueArray(string) {
+    if(!string) return false
+    if(typeof string !== "string") return false
+    const middle = string.split("")
+    const arr = []
+    for (let i = 0; i < middle.length; i++) {
+        if (i == 0) {
+            arr.push(middle[i])
+        } else if (middle[i] !== middle[i - 1]) {
+            arr.push(middle[i])
         }
     }
-    return count
+    return arr
 }
 
-describe("test findCount", () => {
-    const obj = {1: 1, 2: 2, 3: "tfjgbs" }
-    test("return count", ()=>{
-        const res = findCount(obj)
-        expect(res).toBe(2)
+describe("test getUniqueArray", () => {
+    test("returned array", () => {
+        const res = getUniqueArray("AAAABBBCCDAABBB")
+        expect(res).toEqual(['A', 'B', 'C', 'D', 'A', 'B'])
     })
-    test("return false", ()=>{
-        const res = findCount({})
+    test("returned false", () => {
+        const res = getUniqueArray()
+        expect(res).toBeFalsy()
+    })
+    test("returned false", () => {
+        const res = getUniqueArray(123)
         expect(res).toBeFalsy()
     })
 })
