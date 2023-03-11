@@ -3,12 +3,12 @@ import { useState } from "react"
 function Task20() {
     const [value, setValue] = useState()
 
-    function showValues(){
+    function showValues() {
         console.log(value);
     }
 
-    function getValuesOfInput(event){
-        setValue({...value, [event.target.name]: event.target.value})
+    function getValuesOfInput(event) {
+        setValue({ ...value, [event.target.name]: event.target.value })
     }
 
     return (
